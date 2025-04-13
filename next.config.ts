@@ -8,6 +8,8 @@ const nextConfig: NextConfig = {
 
   },
   output: 'export',
+  distDir: 'out', // Explicit output directory
+
 };
 
 export default nextConfig;
