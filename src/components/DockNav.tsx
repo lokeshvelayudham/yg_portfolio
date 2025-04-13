@@ -6,15 +6,12 @@ import {
   Mail,
   PanelsTopLeft,
   BriefcaseBusiness,
-  Linkedin
+  Linkedin,
 } from "lucide-react";
 import { Dock, DockIcon, DockItem, DockLabel } from "@/components/ui/dock";
 import { ThemeToggle } from "@/components/theme";
-import Icon from '@mdi/react';
-import { mdiArtstation,
-  mdiYoutube,
-} from '@mdi/js';
-
+import Icon from "@mdi/react";
+import { mdiArtstation, mdiYoutube } from "@mdi/js";
 
 interface DockItem {
   title: string;
@@ -32,32 +29,32 @@ interface SeparatorItem {
 
 type DockItemType = DockItem | SeparatorItem;
 
-
 export function DockNav() {
   const data: DockItemType[] = [
     {
       title: "Home",
-      icon: <HomeIcon className="h-full w-full text-neutral-600 dark:text-neutral-300" />,
+      icon: (
+        <HomeIcon className="h-full w-full text-neutral-600 dark:text-neutral-300" />
+      ),
       href: "/",
     },
     {
       title: "Projects",
-      icon: <PanelsTopLeft className="h-full w-full text-neutral-600 dark:text-neutral-300" />,
+      icon: (
+        <PanelsTopLeft className="h-full w-full text-neutral-600 dark:text-neutral-300" />
+      ),
       href: "/projects",
     },
     {
       title: "Experience",
-      icon: <BriefcaseBusiness className="h-full w-full text-neutral-600 dark:text-neutral-300" />,
+      icon: (
+        <BriefcaseBusiness className="h-full w-full text-neutral-600 dark:text-neutral-300" />
+      ),
       href: "/experience",
     },
     // Separator
     {
-      isSeparator: true
-    },
-    {
-      title: "Youtube",
-      icon: <Icon path={mdiYoutube} size={1} />,
-      href: "https://www.youtube.com/@YAMINIGANESAN",
+      isSeparator: true,
     },
     {
       title: "ArtStation",
@@ -67,13 +64,17 @@ export function DockNav() {
     },
     {
       title: "linkedin",
-      icon: <Linkedin className="h-full w-full text-neutral-600 dark:text-neutral-300" />,
+      icon: (
+        <Linkedin className="h-full w-full text-neutral-600 dark:text-neutral-300" />
+      ),
       // icon: <ScrollText className="h-full w-full text-neutral-600 dark:text-neutral-300" />,
       href: "https://www.linkedin.com/in/yaminiganesan/",
     },
     {
       title: "Email",
-      icon: <Mail className="h-full w-full text-neutral-600 dark:text-neutral-300" />,
+      icon: (
+        <Mail className="h-full w-full text-neutral-600 dark:text-neutral-300" />
+      ),
       href: "mailto:Yaminiganesh099@gmail.com",
     },
   ];
@@ -81,21 +82,33 @@ export function DockNav() {
   return (
     <div className="fixed bottom-2 left-1/2 max-w-full -translate-x-1/2 z-20">
       <Dock className="items-end pb-3">
-        {data.map((item, idx) => (
+        {data.map((item, idx) =>
           item.isSeparator ? (
-            <div 
+            <div
               key={`separator-${idx}`}
               className="h-8 w-px bg-neutral-300 dark:bg-neutral-600 mx-2"
             />
           ) : (
-          <Link key={idx} href={item.href} passHref>
-            <DockItem className="aspect-square rounded-full bg-gray-200 dark:bg-neutral-800">
-              <DockLabel>{item.title}</DockLabel>
-              <DockIcon>{item.icon}</DockIcon>
-            </DockItem>
-          </Link>
+            <Link
+              key={idx}
+              href={item.href}
+              passHref
+              target={
+                item.href.startsWith("http") || item.href.startsWith("mailto")
+                  ? "_blank"
+                  : undefined
+              }
+              rel={
+                item.href.startsWith("http") ? "noopener noreferrer" : undefined
+              }
+            >
+              <DockItem className="aspect-square rounded-full bg-gray-200 dark:bg-neutral-800">
+                <DockLabel>{item.title}</DockLabel>
+                <DockIcon>{item.icon}</DockIcon>
+              </DockItem>
+            </Link>
           )
-        ))}
+        )}
         <DockItem className="aspect-square rounded-full bg-gray-200 dark:bg-neutral-800">
           <DockLabel>Theme</DockLabel>
           <DockIcon>

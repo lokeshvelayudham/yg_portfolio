@@ -24,14 +24,14 @@ export const projects: Project[] = [
     thumbnail: "/images/goingClear.png",
     media: "/videos/goingClear.mp4",
     tools: ["Maya", "Wordpress", "Unreal Engine", "Readypalyerme"],
-    link: "https://mivy.me/",
+    link: "",
     content: {
       overview:
-        "Contributed to a VR project centered on a 100-story building, where the team was responsible for level design, while taking charge of developing the environment. Key responsibilities included crafting realistic, high-quality virtual spaces, managing the overall look and feel of the environment, and collaborating closely with team members to ensure smooth integration of design elements. Skilled in balancing creativity with technical precision to deliver an engaging and visually cohesive VR experience.",
+        "Led environment design for a VR project centered on a 100-story building. Created realistic,high-quality virtual spaces, managed the overall visual style, and worked closely with the level design team to ensure cohesive integration of assets and smooth user experience.Balanced creative vision with technical accuracy to enhance immersion",
       features: [
-        "Procedurally generated neon signs",
-        "Real-time global illumination",
-        "Interactive elements",
+        "Created realistic, high-quality virtual spaces",
+        "Collaborated with the level design team for seamless asset integration",
+        "Balanced creativity with technical precision for a cohesive VR experience",
       ],
       className: "lg:col-span-1 lg:row-span-2", // Tall card (spans 2 rows)
     },
@@ -48,11 +48,11 @@ export const projects: Project[] = [
     link: "https://iqverse.com/",
     content: {
       overview:
-        "As an Unreal Designer for IQ Verse, I helped create immersive virtual environments that brought people together and supported digital activities like virtual events and trading. Using Unreal Engine, I designed detailed 3D assets and planned the layout of spaces for events like VirtuFests, ensuring they were engaging, easy to navigate, and visually appealing. I also worked on optimizing the platform’s performance to provide users with a smooth and enjoyable experience. This role allowed me to use both technical skills and creativity to design interactive spaces that encouraged exploration and connection in the metaverse.",
+        "As an Unreal Designer for IQ Verse, I created immersive virtual environments for events and digital activities like trading. Using Unreal Engine, I designed 3D assets, planned engaging layouts for events like VirtuFests, and optimized performance to ensure a smooth user experience. This role combined technical skills and creativity to build interactive, user-friendly spaces in the metaverse.",
       features: [
-        "Multiplayer support",
-        "Custom exhibition layouts",
-        "Real-time artwork loading",
+        "Planned level layouts to enhance user engagement and intuitive navigation",
+        "Integrated user feedback into design improvements for better gameplay flow",
+        "Implemented lighting, materials, and post-processing for immersive experiences",
       ],
       className: "lg:col-span-1 lg:row-span-1", // Square card
     },
@@ -68,11 +68,11 @@ export const projects: Project[] = [
     link: "https://iqtechmax.com/",
     content: {
       overview:
-        "I contributed to Swim Genius, a VR simulation by IQTechMax that helps children aged 12+ learn swimming and overcome aquaphobia. Using Unreal Engine’s Blueprint system, I developed realistic water and swimming mechanics to create an immersive, interactive environment. The project bridges virtual training with real-world skills, combining technical precision with creative design.",
+        "Contributed to Swim Genius, a VR swimming simulation game designed to teach children (12+) swimming techniques while easing their fear of water. Used Unreal Engine's Blueprint system to create realistic water behavior and interactive swimming mechanics, blending technical accuracy with engaging design to support real-world skill development.",
       features: [
-        "Multiplayer support",
-        "Custom exhibition layouts",
-        "Real-time artwork loading",
+        "Created custom water shaders for realistic water stimulation",
+        "Built a breathing-underwater Blueprint system and integrated it with VR",
+        "Bridged virtual actions with real-life swimming applications",
       ],
       className: "lg:col-span-1 lg:row-span-1", // Square card
     },
@@ -89,11 +89,11 @@ export const projects: Project[] = [
     link: "https://garuda.aero/",
     content: {
       overview:
-        "As an Environment Artist, I contributed to the VR Farm Drone project by designing an immersive and realistic space to facilitate drone movement. My responsibilities included creating a detailed virtual farm environment by adding assets that accurately represented a real-world agricultural setting.  This involved creating smooth and responsive controls to enhance the simulations functionality and realism. My work combined technical precision and artistic vision to deliver an engaging and practical virtual reality experience.",
+        "As an Environment Artist for the VR Farm Drone project, I designed a detailed and immersive farm environment to facilitate realistic drone movement. Utilizing Unreal Engine's Blueprint system, I programmed smooth drone controls, ensuring an engaging and practical VR experience that accurately simulates a real-world agricultural setting for educational Training.",
       features: [
-        "Procedural tree generation",
-        "Dynamic wind system",
-        "Interactive wildlife",
+        "Designed and built a detailed, realistic virtual farm environment",
+        "Created assets to accurately represent real-world agricultural elements",
+        "Programmed drone movement using Unreal Engine's Blueprint system",
       ],
       className: "lg:col-span-2 lg:row-span-1", // Wide card (spans 2 columns)
     },
@@ -110,11 +110,11 @@ export const projects: Project[] = [
     link: "https://apps.apple.com/us/app/super-stylist-game-dress-up/id6446013845",
     content: {
       overview:
-        "As a Game Design Intern for Super Stylist: Dress Up, I played a key role in delivering a modern fashion gaming experience by designing trendy outfits and developing innovative gameplay challenges. I conducted in-depth research on hyper-casual fashion games, uncovering ways to refine gameplay mechanics, enhance monetization strategies, and increase user retention. My focus was on celebrating the diversity of Western fashion while ensuring the game remained engaging and polished. By collaborating with designers and developers, I contributed to creating features that balanced creativity and user satisfaction. This role sharpened my abilities in game design, market analysis, and user engagement.",
+        "As a Game Design Intern for Super Stylist: Dress Up, I researched hyper-casual fashion games to refine gameplay mechanics, enhance monetization, and improve user retention. I focused on showcasing diverse Western fashion, collaborating witd esigners and developers to create engaging features while delivering a points-based system for level changes.",
       features: [
-        "Dynamic lighting effects",
-        "Aquatic creature AI",
-        "Procedural coral reefs",
+        "Conducted research on hyper-casual fashion games to improve gameplay and monetization",
+        "Designed a points-based system for outfit ratings to enhance level progression",
+        "Collaborated with designers and developers to create engaging game features",
       ],
       className: "lg:col-span-1 lg:row-span-1", // Small square
     },
@@ -132,11 +132,11 @@ export const projects: Project[] = [
     link: "https://play.google.com/store/apps/details?id=com.pixcellplay.ddu&pli=1",
     content: {
       overview:
-        "I contributed to Poke of Words by actively participating in project discussions and identifying gameplay bugs, providing detailed reports for developers. I proposed innovative mechanics and features, supported by design documentation like level blueprints and flowcharts. Additionally, I conducted competitor analysis and researched hyper-casual gaming trends to ensure the project aligned with industry standards and player expectations. This experience allowed me to enhance my skills in gameplay analysis, design documentation, and creative problem-solving while gaining valuable insights into the development process and the competitive gaming market.",
+        "In Poke of Words, I actively participated in project discussions, identified gameplay bugs, and provided detailed reports to developers. I proposed new mechanics, conducted competitor analysis, and researched hyper-casual gaming trends to ensure alignment with industry standards and player expectations, enhancing my skills in gameplay analysis and design documentation.",
       features: [
-        "Dynamic weather system",
-        "Interactive advertisements",
-        "Procedural trash/debris",
+        "Identified gameplay bugs and provided detailed reports for developers",
+        "Conducted competitor analysis and researched hyper-casual gaming trends",
+        "Gameplay analysis,",
       ],
       className: "lg:col-span-2 lg:row-span-2", // Large square (2x2)
     },
@@ -152,18 +152,16 @@ export const projects: Project[] = [
     link: "https://underwaterworld.com/",
     content: {
       overview:
-        "During my internship as a Game Designer at PixcellPlay, I worked on BunnyGo, focusing on level design alongside an experienced designer. I created tiles, added strategic blockages, and balanced difficulty to keep players engaged. This experience sharpened my skills in game design, creativity, and problem-solving.",
+       "Designer to create engaging and challenging levels. I designed 50 level tiles and strategically placed blockages to enhance difficulty while maintaining player  engagement, balancing challenge and enjoyment for a rewarding gameplay experience.",
       features: [
-        "Dynamic lighting effects",
-        "Aquatic creature AI",
-        "Procedural coral reefs",
+        "Level Designer to create progressively challenging levels",
+        "Designed tiles and placed blockages to enhance gameplay difficulty",
+        "Balanced challenge and enjoyment to maintain player engagement",
       ],
       className: "lg:col-span-1 lg:row-span-1", // Small square
     },
   },
- 
 ];
-
 
 export const personal_projects: Project[] = [
   {
@@ -177,11 +175,11 @@ export const personal_projects: Project[] = [
     link: "https://youtu.be/QDpWhm2NUL0?si=TdSU08trqYCcXgD6",
     content: {
       overview:
-        "“The Seasons” is an artistic exploration of nature’s transformative beauty, told through evocative Unreal Engine 3D artworks. Each season is portrayed as a chapter—summer radiates vitality, monsoon brings renewal, winter captures serene stillness, and autumn evokes nostalgic warmth. The visual storytelling fosters emotional connections to nature and reminds viewers of life’s cyclical essence. This series highlights environmental art’s power to inspire awareness, well-being, and renewed appreciation for the natural world.",
+        "The Seasons is a video project created using Unreal Engine 5, inspired by the emotional expressions of nature through its changing seasons. The project visually explores nature’s transformation, each season representing a different emotion and the cycle of life. Through stunning 3D environmental art, the series highlights the inherent beauty of nature while encouraging a deeper emotional connection to the natural world and its changing landscapes.",
       features: [
-        "Procedurally generated neon signs",
-        "Real-time global illumination",
-        "Interactive elements",
+        "Created using Unreal Engine 5, from concept to lighting and rendering",
+        "Focused on emotional storytelling through seasonal landscapes",
+        "Highlighted the therapeutic effect of seasonal art on mental health",
       ],
       className: "lg:col-span-1 lg:row-span-2", // Tall card (spans 2 rows)
     },
@@ -189,20 +187,21 @@ export const personal_projects: Project[] = [
   // Medium square card
   {
     id: 2,
-    name: "The Great Escape",
-    description: "The game uses real-time thriller gameplay to give players an intense experience in gaming.",
-    category: "Unreal Engine 5",
+    name: "The Great Escape (Vol. 1)",
+    description:
+      "The game uses real-time thriller gameplay to give players an intense experience in gaming.",
+    category: "First-Person Thriller Game",
     thumbnail: "/images/TGE.png",
     media: "/videos/tge.mp4",
     tools: ["Unreal Engine", "Maya", "Blender"],
     link: "https://youtu.be/LlwpJlALN3M",
     content: {
       overview:
-        "Design Statement – The Great Escape (Vol. 1)The Great Escape (Vol. 1) is a first-person thriller built in Unreal Engine 5, where players control George, a crime writer searching for his missing daughter in the haunting Grihims Mansion. With intense combat, environmental puzzles, and rich storytelling, the game blends exploration and suspense. Dynamic visuals and immersive audio heighten the experience, making the mansion a key part of the narrative. It’s a gripping journey through fear, mystery, and emotional discovery.",
+        "The Great Escape (Vol. 1) is a spine-chilling first-person shooter game built using Unreal ling and immersive experience. Players take on the role of George, a crime novelist whose daughter goes missing, leading him to the haunted Grihims Mansion. The game blends intense combat, puzzle-solving, and exploration, set against a backdrop of eerie visuals and a gripping narrative. The mansion itself is a key character, offering players an opportunity to uncover its dark secrets while battling relentless zombie hordes category",
       features: [
-        "Multiplayer support",
-        "Custom exhibition layouts",
-        "Real-time artwork loading",
+        "Created zombie Ai",
+        "Combat system with limited weapons, requiring strategic resource management",
+        "Integrated environmental challenges and puzzles",
       ],
       className: "lg:col-span-1 lg:row-span-1", // Square card
     },
@@ -210,19 +209,20 @@ export const personal_projects: Project[] = [
   {
     id: 3,
     name: "Demoreel",
-    description: "This demo reel showcases projects in game design, environment art, and animation, crafted with Unreal Engine 5, Unity, Maya, Photoshop, and Premiere Pro",
-    category: "RPG Games",
+    description:
+      "This demo reel showcases projects in game design, environment art, and animation, crafted with Unreal Engine 5, Unity, Maya, Photoshop, and Premiere Pro",
+    category: "Game Design, Environment Art & Animation",
     thumbnail: "/images/Demoreel.png",
     media: "/videos/demoreel.mp4",
     tools: ["Unreal Engine", "Mixamo", "Blender"],
     link: "https://www.youtube.com/watch?v=cWNqq1gD75c",
     content: {
       overview:
-        "Design Statement - This demo reel highlights work in game design, environment art, and animation using tools like Unreal Engine 5, Unity, and Maya. It features immersive environments, lifelike character animations, and engaging gameplay mechanics. Projects include a haunted mansion, a forest landscape, a dystopian FPS, and a light-based puzzle game. Collaborative work showcases strong teamwork and polished, industry-ready results",
+        "This demo reel showcases a variety of projects in game design, environment art, and animation, developed using industry-standard tools such as Unreal Engine 5, Unity, Maya, Photoshop, and Premiere Pro. The reel highlights immersive environments, dynamic animations, and innovative gameplay mechanics, showcasing a versatile skill set across the game development pipeline. Each project is a reflection of creativity, technical precision, and collaboration",
       features: [
-        "Multiplayer support",
-        "Custom exhibition layouts",
-        "Real-time artwork loading",
+        "Utilizes industry-standard tools: Unreal Engine 5, Unity, Maya, ",
+        "Immersive world-building in environment art with detailed textures, lighting, and atmospheric effects",
+        "AI system and puzzle-solving",
       ],
       className: "lg:col-span-1 lg:row-span-1", // Square card
     },
@@ -231,7 +231,8 @@ export const personal_projects: Project[] = [
   {
     id: 4,
     name: "The crash- Animation Shortfilm ",
-    description: "It highlights immersive environments, dynamic animations, innovative gameplay mechanics,",
+    description:
+      "It highlights immersive environments, dynamic animations, innovative gameplay mechanics,",
     category: "Game Environment",
     thumbnail: "/images/crash.png",
     media: "/videos/crash.mp4",
@@ -239,15 +240,13 @@ export const personal_projects: Project[] = [
     link: "https://youtu.be/YgDTHFMUjbo",
     content: {
       overview:
-        "As an Environment Artist, I contributed to the VR Farm Drone project by designing an immersive and realistic space to facilitate drone movement. My responsibilities included creating a detailed virtual farm environment by adding assets that accurately represented a real-world agricultural setting.  This involved creating smooth and responsive controls to enhance the simulations functionality and realism. My work combined technical precision and artistic vision to deliver an engaging and practical virtual reality experience.",
+        "I developed a short film in Unreal Engine focused on speed awareness, using the contrast between high-speed action and the serene beauty of a winter wonderland to convey the message. The film highlights the intensity of speed while set against peaceful snowy landscapes, creating a powerful visual narrative to encourage reflection on the dangers of reckless speed.",
       features: [
-        "Procedural tree generation",
-        "Dynamic wind system",
-        "Interactive wildlife",
+        "Dynamic Lighting & Effects",
+        "Cinematic Camera Control",
+        "Particle Systems",
       ],
       className: "lg:col-span-2 lg:row-span-1", // Wide card (spans 2 columns)
     },
   },
- 
- 
 ];
