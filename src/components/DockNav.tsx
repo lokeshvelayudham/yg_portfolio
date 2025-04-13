@@ -11,7 +11,7 @@ import {
 import { Dock, DockIcon, DockItem, DockLabel } from "@/components/ui/dock";
 import { ThemeToggle } from "@/components/theme";
 import Icon from "@mdi/react";
-import { mdiArtstation, mdiYoutube } from "@mdi/js";
+import { mdiArtstation, } from "@mdi/js";
 
 interface DockItem {
   title: string;
