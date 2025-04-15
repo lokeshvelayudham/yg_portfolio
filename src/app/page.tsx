@@ -22,11 +22,11 @@ export default function Home() {
 
       {/* Centered Name and Title */}
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-2">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-2 animate-slide-in-left">
           Yamini Ganesan
         </h1>
         <br />
-        <h2 className="text-lg md:text-2xl lg:text-3xl font-medium text-white/80 mb-4">
+        <h2 className="text-lg md:text-2xl lg:text-3xl font-medium text-white/80 mb-4 animate-slide-in-left">
           3D Environment Designer | 3D Artist, VR/AR Designer | Game Designer
         </h2>
       </div>

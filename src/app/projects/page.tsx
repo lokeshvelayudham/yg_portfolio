@@ -114,9 +114,9 @@ export default function ProjectsPage() {
       {/* Content with normal pointer events */}
       <div className="relative z-10">
         <div className="container mx-auto px-4 py-20">
-          <h1 className="text-4xl md:text-6xl font-bold text-center mb-4">Project Portfolio</h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-center mb-4">Projects</h1>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Explore my collection of 3D environments and interactive experiences
+          Unleash Your Inner Vision
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[300px]">
@@ -152,9 +152,8 @@ export default function ProjectsPage() {
 
         {/* personal Projects */}
         <div className="container mx-auto px-4 py-20">
-          <h1 className="text-4xl md:text-6xl font-bold text-center mb-4">Personal Project Portfolio</h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-center mb-4">Personal Project</h1>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Explore my collection of 3D environments and interactive experiences
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[300px]">
