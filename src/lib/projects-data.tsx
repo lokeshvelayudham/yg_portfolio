@@ -168,7 +168,7 @@ export const projects: Project[] = [
       "Research Assistant – Sankofa Seasons Project (Design & Animation Team)",
     category: "3D Design & Animation",
     thumbnail: "/images/Sankofa6.png",
-    media: "/images/Sankofa6.png",
+    media: "/videos/Sankofa.mp4",
     tools: ["Maya", "ZBrush", "Substance Painter"],
     link: "https://underwaterworld.com/",
     content: {
@@ -189,7 +189,7 @@ export const projects: Project[] = [
     description: "Jarvis Innovation Challenge at DePaul University",
     category: "Game Environment",
     thumbnail: "/images/wellNut1.jpg",
-    media: "/videos/GarudaAero.mp4",
+    media: "/videos/Wellnut.mp4",
     tools: ["Unreal Engine", "Fab Assets", "Maya"],
     link: "https://garuda.aero/",
     content: {
