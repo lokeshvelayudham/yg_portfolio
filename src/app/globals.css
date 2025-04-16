@@ -116,6 +116,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -126,6 +127,7 @@
     transform: translateX(-50%);
     opacity: 0;
   }
+
   100% {
     transform: translateX(0);
     opacity: 1;
@@ -134,4 +136,13 @@
 
 .animate-slide-in-left {
   animation: slide-in-left 1s ease-out forwards;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -7,10 +7,13 @@ export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Ensure component is mounted before accessing theme
+  // Set dark theme as default if no theme is set
   useEffect(() => {
+    if (!theme) {
+      setTheme("dark");
+    }
     setMounted(true);
-  }, []);
+  }, [theme, setTheme]);
 
   if (!mounted) {
     return (
