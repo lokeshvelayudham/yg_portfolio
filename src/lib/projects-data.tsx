@@ -152,13 +152,56 @@ export const projects: Project[] = [
     link: "https://underwaterworld.com/",
     content: {
       overview:
-       "Designer to create engaging and challenging levels. I designed 50 level tiles and strategically placed blockages to enhance difficulty while maintaining player  engagement, balancing challenge and enjoyment for a rewarding gameplay experience.",
+        "Designer to create engaging and challenging levels. I designed 50 level tiles and strategically placed blockages to enhance difficulty while maintaining player  engagement, balancing challenge and enjoyment for a rewarding gameplay experience.",
       features: [
         "Level Designer to create progressively challenging levels",
         "Designed tiles and placed blockages to enhance gameplay difficulty",
         "Balanced challenge and enjoyment to maintain player engagement",
       ],
       className: "lg:col-span-1 lg:row-span-1", // Small square
+    },
+  },
+  {
+    id: 8,
+    name: "Sankofa seasons",
+    description:
+      "Research Assistant – Sankofa Seasons Project (Design & Animation Team)",
+    category: "3D Design & Animation",
+    thumbnail: "/images/Sankofa6.png",
+    media: "/images/Sankofa6.png",
+    tools: ["Maya", "ZBrush", "Substance Painter"],
+    link: "https://underwaterworld.com/",
+    content: {
+      overview:
+        "In my role as an Unreal Animator, I contribute to the design and animation team by focusing on the refinement of an AI-driven animal system. My primary responsibilities include cleaning up and enhancing animation assets to ensure fluid and natural motion, with a particular emphasis on animal behavior and expression.I am also actively involved in developing a custom quadruped IK (Inverse Kinematics) system to support realistic locomotion and adaptive animation based on environmental interaction. modifying systems that handle animation state machines, AI behavior trees, and interaction logic. My work includes integrating custom animation solutions with gameplay systems, ensuring that animations respond appropriately to user input and AI decisions. By leveraging Unreal Engine’s Blueprint system, I help prototype and implement complex behaviors quickly while maintaining flexibility for future iteration.",
+      features: [
+        "AI-Driven Animal System ",
+        "Quadruped IK (Inverse Kinematics",
+        "Blueprint Systems Integration",
+        "Collaboration with Cross-Functional Teams",
+      ],
+      className: "lg:col-span-1 lg:row-span-1", // Small square
+    },
+  },
+  {
+    id: 9,
+    name: "Wellnut",
+    description: "Jarvis Innovation Challenge at DePaul University",
+    category: "Game Environment",
+    thumbnail: "/images/wellNut1.jpg",
+    media: "/videos/GarudaAero.mp4",
+    tools: ["Unreal Engine", "Fab Assets", "Maya"],
+    link: "https://garuda.aero/",
+    content: {
+      overview:
+        "As part of the Wellnut Project team—finalists of the Jarvis Innovation Challenge at DePaul University, I was primarily responsible for designing and developing immersive environments where users can engage in guided meditation. My focus was on creating twocore spaces: a tranquil forest environment and a soothing cave environment, eachvdesigned to evoke a sense of peace and presence.v For the cave environment, I used shaders and water simulation techniques to create a serene, flowing water feature that enhances the calming atmosphere. The subtle movement of water, paired with ambient lighting and natural textures, was carefully crafted to help users enter a meditative state. I also worked with Unreal Engine blueprints to build and fine-tune shaders that respond to environmental cues, contributing to the dynamic and interactive nature of the experience. These technical and artistic choices were aimed at supporting the overall goal of the project—to provide a digital space that supports mental wellness through immersive and therapeutic design.",
+      features: [
+        "Real-Time Water Simulation",
+        "Advanced Water Shading",
+        "Terrain Painting",
+        "Sky System Integration",
+      ],
+      className: "lg:col-span-2 lg:row-span-1", // Wide card (spans 2 columns)
     },
   },
 ];

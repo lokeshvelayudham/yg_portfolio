@@ -11,23 +11,13 @@ export default function experience() {
       content: (
         <div className="space-y-4">
           <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-normal">
-          At DePaul University, pursuing my MA in Animation, I’ve expanded my
+            At DePaul University, pursuing my MA in Animation, I’ve expanded my
             creative skills and professional network through hands-on roles and
             active campus involvement. My background in design, animation, and
             VR has allowed me to blend creativity, leadership, and collaboration
             across various positions.
           </p>
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-normal">
-            At the{" "}
-            <strong>
-              {" "}
-              Jarvis Student Center for Innovation and Collaboration,
-            </strong>{" "}
-            I’ve gained valuable experience in operations, event management, and
-            creative resource support. This role has helped me connect with
-            professors and industry professionals, expanding my network and
-            providing insights into cutting-edge projects.
-          </p>
+
           <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-normal">
             As a{" "}
             <strong>
@@ -58,6 +48,21 @@ export default function experience() {
             DePaul have not only leveraged my industry background but also
             opened doors to new collaborations and growth opportunities.
           </p>
+
+          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-normal">
+            Alongside these experiences, I’ve been consistently growing my
+            professional presence on LinkedIn, reaching over 10,000+ followers
+            through regular engagement, thoughtful content, and active
+            networking. This digital network has not only elevated my visibility
+            in the creative and tech communities but also led to several
+            collaborative opportunities on projects both within and beyond
+            DePaul. It has become a powerful tool in expanding my creative reach
+            and connecting with like-minded professionals. All these experiences
+            at DePaul have not only leveraged my industry background but also
+            opened doors to new collaborations and growth opportunities, both
+            online and on campus.
+          </p>
+
           <div className="grid grid-cols-2 gap-2 md:gap-4">
             <Image
               src="/images/Sankofa2.png"
@@ -113,7 +118,7 @@ export default function experience() {
       content: (
         <div className="space-y-4">
           <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-normal">
-          After graduating with my degree in Animation and Special Effects
+            After graduating with my degree in Animation and Special Effects
             from Karnavati University, my first professional step was working as
             a Visual Designer. That role became a crucial foundation for me,
             it’s where I truly developed my eye for detail and learned the
@@ -198,7 +203,7 @@ export default function experience() {
       content: (
         <div className="space-y-4">
           <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-normal">
-          During my time at Karnavati University, I pursued a Bachelors degree
+            During my time at Karnavati University, I pursued a Bachelors degree
             in Animation and Special Effects, which really helped me discover my
             passion for 3D art, rigging, and immersive design. I spent those
             years building a strong foundation in 3D modeling, animation, and
@@ -268,7 +273,7 @@ export default function experience() {
   return (
     <div className="min-h-screen w-full pb-20 bg-white dark:bg-black">
       <div className="pt-16 md:pt-20 w-full">
-      <Timeline data={data} />
+        <Timeline data={data} />
       </div>
       <DockNav />
     </div>
