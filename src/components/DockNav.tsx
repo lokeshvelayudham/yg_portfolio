@@ -60,7 +60,7 @@ export function DockNav() {
       title: "ArtStation",
       icon: <Icon path={mdiArtstation} size={1} />,
       // icon: <ScrollText className="h-full w-full text-neutral-600 dark:text-neutral-300" />,
-      href: "https://www.artstation.com/yaminiganesh3",
+      href: "https://yaminiganesan.artstation.com/",
     },
     {
       title: "linkedin",
