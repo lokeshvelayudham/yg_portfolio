@@ -146,3 +146,87 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+@keyframes pulse-soft {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scale(0.9);
+    opacity: 0.45;
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 14s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(-30px, -40px, 0);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 22s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 48s linear infinite;
+}
+
+@keyframes progress-glow {
+  0% {
+    width: 38%;
+    opacity: 0.7;
+    filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.4));
+  }
+
+  50% {
+    width: 82%;
+    opacity: 1;
+    filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.55));
+  }
+
+  100% {
+    width: 45%;
+    opacity: 0.75;
+    filter: drop-shadow(0 0 12px rgba(34, 197, 94, 0.4));
+  }
+}
+
+.progress-glow {
+  animation: progress-glow 11s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-soft,
+  .animate-float-slow,
+  .animate-spin-slow,
+  .progress-glow {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
