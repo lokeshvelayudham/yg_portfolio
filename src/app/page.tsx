@@ -1,16 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { DockNav } from "@/components/DockNav";
 
 export default function Home() {
-  const [videoLoaded, setVideoLoaded] = useState(false);
-
   return (
     <div className="relative h-screen w-full overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         {/* Fallback gradient that shows while video loads */}
-        <div className={`absolute inset-0 bg-gradient-to-b from-slate-950/50 to-slate-950/70 transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-100'}`}></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 to-slate-950/70" />
         
         <video
           autoPlay
@@ -18,8 +16,7 @@ export default function Home() {
           muted
           playsInline
           preload="auto"
-          className={`w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
-          onLoadedData={() => setVideoLoaded(true)}
+          className="w-full h-full object-cover"
         >
           <source src="/videos/abstract-bg.webm" type="video/webm" />
           <source src="/videos/abstract-bg.mp4" type="video/mp4" />
