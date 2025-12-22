@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: '/videos/abstract-bg.(mp4|webm)',
+        source: '/videos/:path*',
         headers: [
           {
             key: 'Cache-Control',
