@@ -16,9 +16,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Yamini Ganesan | Environment Art Portfolio",
+  title: "Yamini Ganesan | 3D Designer Portfolio",
   description:
-    "Cinematic environment art, virtual production, and interactive 3D work by Yamini Ganesan.",
+    "Immersive 3D design, technical art, virtual production, and interactive work by Yamini Ganesan.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/logos/yg-mark.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/logos/yg-icon-180.png", sizes: "180x180" }],
+  },
 };
 
 export default function RootLayout({
@@ -48,7 +55,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} bg-black antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           {children}
         </ThemeProvider>

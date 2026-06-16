@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">YG logo</title>
+  <desc id="desc">Yamini Ganesan monogram</desc>
+  <defs>
+    <linearGradient id="yg-ring" x1="88" y1="72" x2="424" y2="440" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f1b56f"/>
+      <stop offset="0.52" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#68d8c2"/>
+    </linearGradient>
+    <linearGradient id="yg-fill" x1="140" y1="136" x2="372" y2="376" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#d8fff7"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="#060606"/>
+  <circle cx="256" cy="256" r="190" fill="none" stroke="url(#yg-ring)" stroke-width="20"/>
+  <circle cx="256" cy="256" r="148" fill="#10100f" stroke="#ffffff" stroke-opacity="0.14" stroke-width="2"/>
+  <text x="256" y="304" text-anchor="middle" fill="url(#yg-fill)" font-family="Helvetica Neue, Arial, Helvetica, sans-serif" font-size="166" font-weight="800" letter-spacing="-10">YG</text>
+  <path d="M155 362h202" stroke="#f1b56f" stroke-width="10" stroke-linecap="round"/>
+</svg>

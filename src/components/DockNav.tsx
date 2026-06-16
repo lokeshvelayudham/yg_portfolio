@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import {
   HomeIcon,
+  FileText,
   Mail,
   PanelsTopLeft,
   BriefcaseBusiness,
@@ -46,6 +47,13 @@ export function DockNav() {
       href: "/projects",
     },
     {
+      title: "Resume",
+      icon: (
+        <FileText className="h-full w-full text-neutral-600 dark:text-neutral-300" />
+      ),
+      href: "/resume/yamini-ganesan-resume.pdf",
+    },
+    {
       title: "Experience",
       icon: (
         <BriefcaseBusiness className="h-full w-full text-neutral-600 dark:text-neutral-300" />
@@ -58,7 +66,13 @@ export function DockNav() {
     },
     {
       title: "ArtStation",
-      icon: <Icon path={mdiArtstation} size={1} />,
+      icon: (
+        <Icon
+          path={mdiArtstation}
+          size={1}
+          className="text-neutral-600 dark:text-neutral-300"
+        />
+      ),
       // icon: <ScrollText className="h-full w-full text-neutral-600 dark:text-neutral-300" />,
       href: "https://yaminiganesan.artstation.com/",
     },
@@ -82,8 +96,14 @@ export function DockNav() {
   return (
     <div className="fixed bottom-2 left-1/2 max-w-full -translate-x-1/2 z-20">
       <Dock className="items-end pb-3">
-        {data.map((item, idx) =>
-          item.isSeparator ? (
+        {data.map((item, idx) => {
+          const opensInNewTab =
+            !item.isSeparator &&
+            (item.href.startsWith("http") ||
+              item.href.startsWith("mailto") ||
+              item.href.endsWith(".pdf"));
+
+          return item.isSeparator ? (
             <div
               key={`separator-${idx}`}
               className="h-8 w-px bg-neutral-300 dark:bg-neutral-600 mx-2"
@@ -93,13 +113,11 @@ export function DockNav() {
               key={idx}
               href={item.href}
               passHref
-              target={
-                item.href.startsWith("http") || item.href.startsWith("mailto")
-                  ? "_blank"
-                  : undefined
-              }
+              target={opensInNewTab ? "_blank" : undefined}
               rel={
-                item.href.startsWith("http") ? "noopener noreferrer" : undefined
+                item.href.startsWith("http") || item.href.endsWith(".pdf")
+                  ? "noopener noreferrer"
+                  : undefined
               }
             >
               <DockItem className="aspect-square rounded-full bg-gray-200 dark:bg-neutral-800">
@@ -107,8 +125,8 @@ export function DockNav() {
                 <DockIcon>{item.icon}</DockIcon>
               </DockItem>
             </Link>
-          )
-        )}
+          );
+        })}
         <DockItem className="aspect-square rounded-full bg-gray-200 dark:bg-neutral-800">
           <DockLabel>Theme</DockLabel>
           <DockIcon>

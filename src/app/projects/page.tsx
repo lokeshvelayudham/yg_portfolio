@@ -12,17 +12,17 @@ export const metadata = {
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-[#060606] pb-24 text-white">
+    <main className="min-h-screen bg-[color:var(--portfolio-bg)] pb-24 text-[color:var(--portfolio-text)]">
 
       <section className="mx-auto max-w-7xl px-5 pb-10 pt-32 sm:px-8 lg:px-10">
         <div className="max-w-4xl">
           <p className="text-xs font-semibold uppercase tracking-[0.36em] text-[#68d8c2]">
             Work Index
           </p>
-          <h1 className="mt-5 text-5xl font-semibold leading-none tracking-normal sm:text-7xl">
+          <h1 className="mt-5 text-5xl font-semibold leading-none tracking-normal text-[color:var(--portfolio-heading)] sm:text-7xl">
             Environment art and real-time worlds.
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-white/65 sm:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-7 text-[color:var(--portfolio-muted)] sm:text-lg">
             A focused set of game environments, cinematic lighting studies,
             digital twin work, virtual production shots, and technical tools.
           </p>
@@ -35,7 +35,7 @@ export default function ProjectsPage() {
             <Link
               key={project.slug}
               href={`/projects/${project.slug}`}
-              className={`group relative overflow-hidden border border-white/10 bg-[#111] ${
+              className={`group relative overflow-hidden border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-surface-strong)] ${
                 index === 0
                   ? "md:col-span-2 md:row-span-2"
                   : index === 1
@@ -54,7 +54,7 @@ export default function ProjectsPage() {
                 }
                 className="object-cover opacity-[0.72] transition duration-500 group-hover:scale-[1.035] group-hover:opacity-95"
               />
-              <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(0,0,0,0.94)_0%,rgba(0,0,0,0.18)_70%)]" />
+              <div className="absolute inset-0 bg-[image:var(--portfolio-card-overlay)]" />
               <div className="absolute left-4 top-4 flex items-center gap-2 border border-white/15 bg-black/45 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/70 backdrop-blur-md">
                 <Layers3 className="size-3.5" />
                 {String(index + 1).padStart(2, "0")}

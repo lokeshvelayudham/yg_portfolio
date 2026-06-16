@@ -56,7 +56,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const relatedProjects = getRelatedProjects(project.slug);
 
   return (
-    <main className="min-h-screen bg-[#060606] pb-24 text-white">
+    <main className="min-h-screen bg-[color:var(--portfolio-bg)] pb-24 text-[color:var(--portfolio-text)]">
 
       <section className="relative min-h-[82svh] overflow-hidden">
         <Image
@@ -68,8 +68,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-black/48" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,6,6,0.94)_0%,rgba(6,6,6,0.5)_52%,rgba(6,6,6,0.16)_100%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-44 bg-[linear-gradient(0deg,#060606_0%,rgba(6,6,6,0)_100%)]" />
+        <div className="absolute inset-0 bg-[image:var(--portfolio-hero-gradient)]" />
+        <div className="absolute inset-x-0 bottom-0 h-44 bg-[image:var(--portfolio-hero-fade)]" />
 
         <div className="relative z-10 mx-auto flex min-h-[82svh] max-w-7xl flex-col justify-end px-5 pb-14 pt-28 sm:px-8 lg:px-10">
           <Link
@@ -82,7 +82,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <p className="text-xs font-semibold uppercase tracking-[0.36em] text-[#f1b56f]">
             {project.category}
           </p>
-          <h1 className="mt-5 max-w-5xl text-5xl font-semibold leading-none tracking-normal sm:text-7xl">
+          <h1 className="mt-5 max-w-5xl text-5xl font-semibold leading-none tracking-normal text-white sm:text-7xl">
             {project.title}
           </h1>
           <p className="mt-6 max-w-3xl text-base leading-7 text-white/72 sm:text-lg">
@@ -91,29 +91,29 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#0b0b0b]">
+      <section className="border-y border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-surface)]">
         <div className="mx-auto grid max-w-7xl gap-0 px-5 py-8 sm:grid-cols-3 sm:px-8 lg:px-10">
-          <div className="border-white/10 py-4 sm:border-r sm:pr-6">
-            <p className="text-[10px] uppercase tracking-[0.32em] text-white/38">
+          <div className="border-[color:var(--portfolio-border)] py-4 sm:border-r sm:pr-6">
+            <p className="text-[10px] uppercase tracking-[0.32em] text-[color:var(--portfolio-subtle)]">
               Role
             </p>
-            <p className="mt-2 text-sm font-medium text-white/88">
+            <p className="mt-2 text-sm font-medium text-[color:var(--portfolio-heading)]">
               {project.role}
             </p>
           </div>
-          <div className="border-white/10 py-4 sm:border-r sm:px-6">
-            <p className="text-[10px] uppercase tracking-[0.32em] text-white/38">
+          <div className="border-[color:var(--portfolio-border)] py-4 sm:border-r sm:px-6">
+            <p className="text-[10px] uppercase tracking-[0.32em] text-[color:var(--portfolio-subtle)]">
               Tools
             </p>
-            <p className="mt-2 text-sm font-medium text-white/88">
+            <p className="mt-2 text-sm font-medium text-[color:var(--portfolio-heading)]">
               {project.tools.join(" / ")}
             </p>
           </div>
           <div className="py-4 sm:pl-6">
-            <p className="text-[10px] uppercase tracking-[0.32em] text-white/38">
+            <p className="text-[10px] uppercase tracking-[0.32em] text-[color:var(--portfolio-subtle)]">
               Focus
             </p>
-            <p className="mt-2 text-sm font-medium text-white/88">
+            <p className="mt-2 text-sm font-medium text-[color:var(--portfolio-heading)]">
               {project.contributions.slice(0, 2).join(" / ")}
             </p>
           </div>
@@ -125,15 +125,15 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#68d8c2]">
             Overview
           </p>
-          <div className="mt-6 space-y-6 text-base leading-8 text-white/72">
+          <div className="mt-6 space-y-6 text-base leading-8 text-[color:var(--portfolio-muted)]">
             {project.overview.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
         </div>
 
-        <aside className="border border-white/10 bg-white/[0.035] p-5">
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-white/50">
+        <aside className="border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-surface-strong)] p-5">
+          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-[color:var(--portfolio-subtle)]">
             <Wrench className="size-4" />
             Contributions
           </div>
@@ -141,7 +141,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             {project.contributions.map((item) => (
               <li
                 key={item}
-                className="border-t border-white/10 pt-3 text-sm leading-6 text-white/74 first:border-t-0 first:pt-0"
+                className="border-t border-[color:var(--portfolio-border)] pt-3 text-sm leading-6 text-[color:var(--portfolio-muted)] first:border-t-0 first:pt-0"
               >
                 {item}
               </li>
@@ -156,7 +156,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex w-full items-center justify-between border border-white/15 px-4 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white/80 transition-colors hover:border-white/40 hover:bg-white/10 hover:text-white"
+                  className="inline-flex w-full items-center justify-between border border-[color:var(--portfolio-border)] px-4 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--portfolio-heading)] transition-colors hover:border-[color:var(--portfolio-border-strong)] hover:bg-[color:var(--portfolio-surface)]"
                 >
                   {link.label}
                   <ExternalLink className="size-4" />
@@ -168,7 +168,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </section>
 
       {project.videos.length > 0 && (
-        <section className="border-y border-white/10 bg-[#0b0b0b] px-5 py-20 sm:px-8 lg:px-10">
+        <section className="border-y border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-surface)] px-5 py-20 sm:px-8 lg:px-10">
           <div className="mx-auto max-w-7xl">
             <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.34em] text-[#f1b56f]">
               <Film className="size-4" />
@@ -177,7 +177,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <div className="mt-8 grid gap-6 lg:grid-cols-2">
               {project.videos.map((video) => (
                 <figure key={video.src}>
-                  <div className="aspect-video overflow-hidden border border-white/10 bg-black">
+                  <div className="aspect-video overflow-hidden border border-[color:var(--portfolio-border)] bg-black">
                     <video
                       src={video.src}
                       poster={video.poster}
@@ -186,7 +186,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                       className="h-full w-full object-contain"
                     />
                   </div>
-                  <figcaption className="mt-3 text-sm text-white/58">
+                  <figcaption className="mt-3 text-sm text-[color:var(--portfolio-muted)]">
                     {video.title}
                   </figcaption>
                 </figure>
@@ -197,12 +197,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       )}
 
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10">
-        <div className="flex items-end justify-between gap-6 border-b border-white/10 pb-7">
+        <div className="flex items-end justify-between gap-6 border-b border-[color:var(--portfolio-border)] pb-7">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-white/42">
+            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[color:var(--portfolio-subtle)]">
               Gallery
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-white">
+            <h2 className="mt-3 text-3xl font-semibold text-[color:var(--portfolio-heading)]">
               Project frames and process views
             </h2>
           </div>
@@ -212,7 +212,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           {project.gallery.map((image, index) => (
             <div
               key={image}
-              className={`relative overflow-hidden border border-white/10 bg-[#111] ${
+              className={`relative overflow-hidden border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-surface-strong)] ${
                 index === 0 ? "aspect-[16/9] md:col-span-2" : "aspect-[4/3]"
               }`}
             >
@@ -232,15 +232,15 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-[#10100f] px-5 py-16 sm:px-8 lg:px-10">
+      <section className="border-t border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-surface-strong)] px-5 py-16 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="flex items-center justify-between gap-6">
-            <h2 className="text-2xl font-semibold text-white">
+            <h2 className="text-2xl font-semibold text-[color:var(--portfolio-heading)]">
               More case studies
             </h2>
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/65 transition-colors hover:text-white"
+              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--portfolio-muted)] transition-colors hover:text-[color:var(--portfolio-heading)]"
             >
               All Work
               <ArrowRight className="size-4" />
@@ -251,7 +251,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <Link
                 key={related.slug}
                 href={`/projects/${related.slug}`}
-                className="group relative aspect-[4/3] overflow-hidden border border-white/10 bg-black"
+                className="group relative aspect-[4/3] overflow-hidden border border-[color:var(--portfolio-border)] bg-black"
               >
                 <Image
                   src={related.hero}
@@ -260,7 +260,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   sizes="(min-width: 768px) 33vw, 100vw"
                   className="object-cover opacity-[0.72] transition duration-500 group-hover:scale-[1.03] group-hover:opacity-95"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(0,0,0,0.9)_0%,rgba(0,0,0,0.12)_70%)]" />
+                <div className="absolute inset-0 bg-[image:var(--portfolio-card-overlay)]" />
                 <div className="absolute inset-x-0 bottom-0 p-4">
                   <p className="text-[10px] uppercase tracking-[0.26em] text-[#f1b56f]">
                     {related.category}

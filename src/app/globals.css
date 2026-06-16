@@ -76,6 +76,31 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --portfolio-bg: #f6f1ea;
+  --portfolio-surface: #ece4d9;
+  --portfolio-surface-strong: #fffaf3;
+  --portfolio-text: rgba(33, 29, 24, 0.82);
+  --portfolio-heading: #141210;
+  --portfolio-muted: rgba(33, 29, 24, 0.66);
+  --portfolio-subtle: rgba(33, 29, 24, 0.44);
+  --portfolio-border: rgba(43, 35, 28, 0.14);
+  --portfolio-border-strong: rgba(43, 35, 28, 0.24);
+  --portfolio-hero-gradient: linear-gradient(
+    90deg,
+    rgba(6, 6, 6, 0.78) 0%,
+    rgba(6, 6, 6, 0.36) 48%,
+    rgba(6, 6, 6, 0.08) 100%
+  );
+  --portfolio-hero-fade: linear-gradient(
+    0deg,
+    #f6f1ea 0%,
+    rgba(246, 241, 234, 0) 100%
+  );
+  --portfolio-card-overlay: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.18) 68%
+  );
 }
 
 .dark {
@@ -110,12 +135,37 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --portfolio-bg: #060606;
+  --portfolio-surface: #0a0a0a;
+  --portfolio-surface-strong: #10100f;
+  --portfolio-text: rgba(255, 255, 255, 0.82);
+  --portfolio-heading: #ffffff;
+  --portfolio-muted: rgba(255, 255, 255, 0.66);
+  --portfolio-subtle: rgba(255, 255, 255, 0.42);
+  --portfolio-border: rgba(255, 255, 255, 0.1);
+  --portfolio-border-strong: rgba(255, 255, 255, 0.18);
+  --portfolio-hero-gradient: linear-gradient(
+    90deg,
+    rgba(6, 6, 6, 0.76) 0%,
+    rgba(6, 6, 6, 0.24) 48%,
+    rgba(6, 6, 6, 0.04) 100%
+  );
+  --portfolio-hero-fade: linear-gradient(
+    0deg,
+    #060606 0%,
+    rgba(6, 6, 6, 0) 100%
+  );
+  --portfolio-card-overlay: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.18) 68%
+  );
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    background: #060606;
+    background: var(--portfolio-bg);
   }
 
   * {
@@ -124,7 +174,8 @@
 
   body {
     min-height: 100vh;
-    @apply bg-background text-foreground;
+    background: var(--portfolio-bg);
+    color: var(--portfolio-text);
   }
 
   ::selection {
