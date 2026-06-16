@@ -120,53 +120,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1fr_360px] lg:px-10">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#68d8c2]">
-            Overview
-          </p>
-          <div className="mt-6 space-y-6 text-base leading-8 text-[color:var(--portfolio-muted)]">
-            {project.overview.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-        </div>
-
-        <aside className="border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-surface-strong)] p-5">
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-[color:var(--portfolio-subtle)]">
-            <Wrench className="size-4" />
-            Contributions
-          </div>
-          <ul className="mt-5 space-y-3">
-            {project.contributions.map((item) => (
-              <li
-                key={item}
-                className="border-t border-[color:var(--portfolio-border)] pt-3 text-sm leading-6 text-[color:var(--portfolio-muted)] first:border-t-0 first:pt-0"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-
-          {project.externalLinks.length > 0 && (
-            <div className="mt-8 space-y-3">
-              {project.externalLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-full items-center justify-between border border-[color:var(--portfolio-border)] px-4 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--portfolio-heading)] transition-colors hover:border-[color:var(--portfolio-border-strong)] hover:bg-[color:var(--portfolio-surface)]"
-                >
-                  {link.label}
-                  <ExternalLink className="size-4" />
-                </Link>
-              ))}
-            </div>
-          )}
-        </aside>
-      </section>
-
       {project.videos.length > 0 && (
         <section className="border-y border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-surface)] px-5 py-20 sm:px-8 lg:px-10">
           <div className="mx-auto max-w-7xl">
@@ -230,6 +183,53 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1fr_360px] lg:px-10">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#68d8c2]">
+            Overview
+          </p>
+          <div className="mt-6 space-y-6 text-base leading-8 text-[color:var(--portfolio-muted)]">
+            {project.overview.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+
+        <aside className="border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-surface-strong)] p-5">
+          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-[color:var(--portfolio-subtle)]">
+            <Wrench className="size-4" />
+            Contributions
+          </div>
+          <ul className="mt-5 space-y-3">
+            {project.contributions.map((item) => (
+              <li
+                key={item}
+                className="border-t border-[color:var(--portfolio-border)] pt-3 text-sm leading-6 text-[color:var(--portfolio-muted)] first:border-t-0 first:pt-0"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+
+          {project.externalLinks.length > 0 && (
+            <div className="mt-8 space-y-3">
+              {project.externalLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full items-center justify-between border border-[color:var(--portfolio-border)] px-4 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--portfolio-heading)] transition-colors hover:border-[color:var(--portfolio-border-strong)] hover:bg-[color:var(--portfolio-surface)]"
+                >
+                  {link.label}
+                  <ExternalLink className="size-4" />
+                </Link>
+              ))}
+            </div>
+          )}
+        </aside>
       </section>
 
       <section className="border-t border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-surface-strong)] px-5 py-16 sm:px-8 lg:px-10">
