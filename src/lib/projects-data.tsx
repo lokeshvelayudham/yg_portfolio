@@ -1,295 +1,317 @@
-// lib/projects-data.ts
-export interface Project {
-  id: number;
-  name: string;
-  description: string;
-  category: string;
-  thumbnail: string;
-  media: string;
-  tools: string[];
-  link: string;
-  content: {
-    overview: string;
-    features: string[];
-    className: string;
-  };
+export interface ProjectVideo {
+  title: string;
+  src: string;
+  poster?: string;
 }
+
+export interface ProjectLink {
+  label: string;
+  href: string;
+}
+
+export interface Project {
+  slug: string;
+  title: string;
+  category: string;
+  role: string;
+  summary: string;
+  overview: string[];
+  tools: string[];
+  contributions: string[];
+  hero: string;
+  gallery: string[];
+  videos: ProjectVideo[];
+  externalLinks: ProjectLink[];
+  featured: boolean;
+}
+
+const asset = (slug: string, filename: string) => `/portfolio/${slug}/${filename}`;
+
+const gallery = (slug: string, prefix: string, count: number) =>
+  Array.from({ length: count }, (_, index) => {
+    const number = String(index + 1).padStart(2, "0");
+    return asset(slug, `${prefix}-${number}.webp`);
+  });
 
 export const projects: Project[] = [
   {
-    id: 1,
-    name: "MIVY ",
-    description: "Meet with you web visitors - Goingclear(Boston)",
-    category: "B2B - Metaverse",
-    thumbnail: "/images/goingClear.png",
-    media: "/videos/goingClear.mp4",
-    tools: ["Maya", "Wordpress", "Unreal Engine", "Readypalyerme"],
-    link: "",
-    content: {
-      overview:
-        "Led environment design for a VR project centered on a 100-story building. Created realistic,high-quality virtual spaces, managed the overall visual style, and worked closely with the level design team to ensure cohesive integration of assets and smooth user experience.Balanced creative vision with technical accuracy to enhance immersion",
-      features: [
-        "Created realistic, high-quality virtual spaces",
-        "Collaborated with the level design team for seamless asset integration",
-        "Balanced creativity with technical precision for a cohesive VR experience",
-      ],
-      className: "lg:col-span-1 lg:row-span-2", // Tall card (spans 2 rows)
-    },
-  },
-  // Medium square card
-  {
-    id: 2,
-    name: "Iqverse",
-    description: "I - IQtech Pvt Ltd (India)",
-    category: "VR Experience",
-    thumbnail: "/images/iqverse.png",
-    media: "/videos/IQVERSE.mp4",
-    tools: ["Unreal Engine", "Maya", "Blender"],
-    link: "https://iqverse.com/",
-    content: {
-      overview:
-        "As an Unreal Designer for IQ Verse, I created immersive virtual environments for events and digital activities like trading. Using Unreal Engine, I designed 3D assets, planned engaging layouts for events like VirtuFests, and optimized performance to ensure a smooth user experience. This role combined technical skills and creativity to build interactive, user-friendly spaces in the metaverse.",
-      features: [
-        "Planned level layouts to enhance user engagement and intuitive navigation",
-        "Integrated user feedback into design improvements for better gameplay flow",
-        "Implemented lighting, materials, and post-processing for immersive experiences",
-      ],
-      className: "lg:col-span-1 lg:row-span-1", // Square card
-    },
+    slug: "lost-past",
+    title: "Lost Past",
+    category: "Environment Art",
+    role: "Environment Artist",
+    summary:
+      "An ancient temple environment focused on modular architecture, sculpted trim detail, water shaders, and cinematic lighting.",
+    overview: [
+      "Lost Past is an environment art project created as part of an upcoming game, focused on capturing the atmosphere of an ancient temple hidden within time. The scene was fully modeled in Autodesk Maya, with a strong emphasis on modularity, architectural storytelling, and visual composition.",
+      "Custom trim sheets were sculpted in ZBrush and textured in Substance 3D Painter, allowing efficient asset creation while maintaining a high level of surface detail across the environment. Every major asset, from the temple structure to the ornamental carvings, was built from scratch to establish a cohesive visual language inspired by ancient architecture.",
+      "A significant portion of the project was dedicated to lighting and mood exploration. Multiple lighting passes refined the interaction between warm temple illumination, stone surfaces, and the reflective water feature at the center of the scene. Small details such as floating lotus flowers were placed to enhance scale, serenity, and environmental storytelling.",
+    ],
+    tools: ["Maya", "ZBrush", "Substance 3D Painter", "Redshift"],
+    contributions: [
+      "Environment modeling",
+      "Modular asset creation",
+      "Custom trim sheet workflow",
+      "High-detail sculpting and texturing",
+      "Lighting development and look exploration",
+      "Water shader development",
+      "Scene composition and final rendering",
+    ],
+    hero: asset("lost-past", "lost-past-hero.webp"),
+    gallery: gallery("lost-past", "lost-past", 16),
+    videos: [],
+    externalLinks: [],
+    featured: true,
   },
   {
-    id: 3,
-    name: "Swim Genius",
-    description: "Iqtech Pvt Ltd (Cambodia)",
-    category: "VR Experience",
-    thumbnail: "/images/swimgenius.png",
-    media: "/videos/swimgenius.mp4",
-    tools: ["Unreal Engine", "Mixamo", "Blender"],
-    link: "https://iqtechmax.com/",
-    content: {
-      overview:
-        "Contributed to Swim Genius, a VR swimming simulation game designed to teach children (12+) swimming techniques while easing their fear of water. Used Unreal Engine's Blueprint system to create realistic water behavior and interactive swimming mechanics, blending technical accuracy with engaging design to support real-world skill development.",
-      features: [
-        "Created custom water shaders for realistic water stimulation",
-        "Built a breathing-underwater Blueprint system and integrated it with VR",
-        "Bridged virtual actions with real-life swimming applications",
-      ],
-      className: "lg:col-span-1 lg:row-span-1", // Square card
-    },
-  },
-  // Wide horizontal card
-  {
-    id: 4,
-    name: "Vr Farm",
-    description: "Vr Fram Drone Stimulation - Garuda Aerospace (Dubai)",
-    category: "Game Environment",
-    thumbnail: "/images/Vrfarm.png",
-    media: "/videos/GarudaAero.mp4",
-    tools: ["Unreal Engine", "Fab Assets", "Maya"],
-    link: "https://garuda.aero/",
-    content: {
-      overview:
-        "As an Environment Artist for the VR Farm Drone project, I designed a detailed and immersive farm environment to facilitate realistic drone movement. Utilizing Unreal Engine's Blueprint system, I programmed smooth drone controls, ensuring an engaging and practical VR experience that accurately simulates a real-world agricultural setting for educational Training.",
-      features: [
-        "Designed and built a detailed, realistic virtual farm environment",
-        "Created assets to accurately represent real-world agricultural elements",
-        "Programmed drone movement using Unreal Engine's Blueprint system",
-      ],
-      className: "lg:col-span-2 lg:row-span-1", // Wide card (spans 2 columns)
-    },
-  },
-  // Small square card
-  {
-    id: 5,
-    name: "Super Stylist Game",
-    description: "Game environment",
-    category: "Mobile Game",
-    thumbnail: "/images/superstylist.jpg",
-    media: "/videos/ss.mp4",
-    tools: ["Maya", "ZBrush", "Substance Painter"],
-    link: "https://apps.apple.com/us/app/super-stylist-game-dress-up/id6446013845",
-    content: {
-      overview:
-        "As a Game Design Intern for Super Stylist: Dress Up, I researched hyper-casual fashion games to refine gameplay mechanics, enhance monetization, and improve user retention. I focused on showcasing diverse Western fashion, collaborating witd esigners and developers to create engaging features while delivering a points-based system for level changes.",
-      features: [
-        "Conducted research on hyper-casual fashion games to improve gameplay and monetization",
-        "Designed a points-based system for outfit ratings to enhance level progression",
-        "Collaborated with designers and developers to create engaging game features",
-      ],
-      className: "lg:col-span-1 lg:row-span-1", // Small square
-    },
-  },
-
-  // Large square card
-  {
-    id: 6,
-    name: "Poke of words ",
-    description: "Exploration game",
-    category: "Environment Design",
-    thumbnail: "/images/pow.png",
-    media: "/videos/pow.mp4",
-    tools: ["Blender", "Substance Painter", "Unreal Engine"],
-    link: "https://play.google.com/store/apps/details?id=com.pixcellplay.ddu&pli=1",
-    content: {
-      overview:
-        "In Poke of Words, I actively participated in project discussions, identified gameplay bugs, and provided detailed reports to developers. I proposed new mechanics, conducted competitor analysis, and researched hyper-casual gaming trends to ensure alignment with industry standards and player expectations, enhancing my skills in gameplay analysis and design documentation.",
-      features: [
-        "Identified gameplay bugs and provided detailed reports for developers",
-        "Conducted competitor analysis and researched hyper-casual gaming trends",
-        "Gameplay analysis,",
-      ],
-      className: "lg:col-span-2 lg:row-span-2", // Large square (2x2)
-    },
+    slug: "lost-rooms",
+    title: "Lost Rooms",
+    category: "Psychological Horror Game",
+    role: "Primary Developer / Environment Artist",
+    summary:
+      "A first-person horror project built around unsettling room repetition, subtle anomalies, atmospheric lighting, and Blueprint-driven gameplay events.",
+    overview: [
+      "Lost Rooms is a first-person psychological horror game developed as part of DePaul Originals Studio. Inspired by the unsettling atmosphere of Exit 8 and the surreal horror of The Backrooms, the game places players in an endless sequence of familiar rooms where subtle anomalies challenge perception, memory, and reality.",
+      "As the primary developer, I built the game from the ground up and took ownership of nearly every aspect of production. I created all 3D assets from scratch, including modeling, texturing, and environmental design. The environments were modeled in Maya and assembled in Unreal Engine 5, with a heavy focus on lighting, mood, and environmental storytelling.",
+      "Beyond environment art, I implemented sound integration, visual effects, and gameplay systems using Blueprints, creating interactive anomalies, environmental events, and in-engine animations that drive the horror experience.",
+    ],
+    tools: ["Unreal Engine 5", "Maya", "Blueprints"],
+    contributions: [
+      "Environment art and level design",
+      "3D modeling and texturing",
+      "Asset creation pipeline",
+      "Blueprint scripting",
+      "Gameplay system implementation",
+      "In-engine animation setup",
+      "Sound and visual effects integration",
+    ],
+    hero: asset("lost-rooms", "lost-rooms-hero.webp"),
+    gallery: gallery("lost-rooms", "lost-rooms", 20),
+    videos: [
+      {
+        title: "Lost Rooms gameplay capture",
+        src: asset("lost-rooms", "lost-rooms-video-01.mp4"),
+        poster: asset("lost-rooms", "lost-rooms-hero.webp"),
+      },
+    ],
+    externalLinks: [],
+    featured: true,
   },
   {
-    id: 7,
-    name: "Bunny Go ",
-    description: "Exploration game",
-    category: "3D Design",
-    thumbnail: "/images/Bunnygo.png",
-    media: "/videos/Bunnygo.mp4",
-    tools: ["Maya", "ZBrush", "Substance Painter"],
-    link: "https://underwaterworld.com/",
-    content: {
-      overview:
-        "Designer to create engaging and challenging levels. I designed 50 level tiles and strategically placed blockages to enhance difficulty while maintaining player  engagement, balancing challenge and enjoyment for a rewarding gameplay experience.",
-      features: [
-        "Level Designer to create progressively challenging levels",
-        "Designed tiles and placed blockages to enhance gameplay difficulty",
-        "Balanced challenge and enjoyment to maintain player engagement",
-      ],
-      className: "lg:col-span-1 lg:row-span-1", // Small square
-    },
+    slug: "architectural-interior-lighting-study",
+    title: "Architectural Interior Lighting Study",
+    category: "Architectural Visualization",
+    role: "Lighting Artist / 3D Artist",
+    summary:
+      "A contemporary interior study exploring natural sunlight, warm late-afternoon mood, material response, and clean visual composition.",
+    overview: [
+      "This architectural interior visualization was created as a lighting and mood exploration project, focusing on the interaction between natural sunlight and interior materials within a contemporary living space. The goal was to capture the warmth and subtle atmosphere of a late-afternoon indoor environment while maintaining a clean, minimalist aesthetic.",
+      "The scene was fully assembled in Autodesk Maya, where composition, asset placement, and lighting setup were developed to guide the viewer's attention through the space. A combination of natural window light and strategically placed artificial light sources created a soft, balanced evening ambiance with realistic falloff and shadow definition.",
+      "Materials and textures were selected to complement the warm lighting conditions, emphasizing contrast between matte surfaces, glossy furniture elements, and reflective materials. The final renders were produced with Redshift Renderer using physically based shading and global illumination.",
+    ],
+    tools: ["Maya", "Redshift"],
+    contributions: [
+      "Interior environment setup",
+      "Architectural visualization",
+      "Lighting development and mood exploration",
+      "Material and texture creation",
+      "Composition and scene layout",
+      "Physically based rendering",
+      "Look development and final rendering",
+    ],
+    hero: asset(
+      "architectural-interior-lighting-study",
+      "architecture-hero.webp",
+    ),
+    gallery: gallery(
+      "architectural-interior-lighting-study",
+      "architecture",
+      4,
+    ),
+    videos: [],
+    externalLinks: [],
+    featured: true,
   },
   {
-    id: 8,
-    name: "Sankofa seasons",
-    description:
-      "Research Assistant – Sankofa Seasons Project (Design & Animation Team)",
-    category: "3D Design & Animation",
-    thumbnail: "/images/Sankofa6.png",
-    media: "/videos/Sankofa.mp4",
-    tools: ["Maya", "ZBrush", "Substance Painter"],
-    link: "https://underwaterworld.com/",
-    content: {
-      overview:
-        "In my role as an Unreal Animator, I contribute to the design and animation team by focusing on the refinement of an AI-driven animal system. My primary responsibilities include cleaning up and enhancing animation assets to ensure fluid and natural motion, with a particular emphasis on animal behavior and expression.I am also actively involved in developing a custom quadruped IK (Inverse Kinematics) system to support realistic locomotion and adaptive animation based on environmental interaction. modifying systems that handle animation state machines, AI behavior trees, and interaction logic. My work includes integrating custom animation solutions with gameplay systems, ensuring that animations respond appropriately to user input and AI decisions. By leveraging Unreal Engine’s Blueprint system, I help prototype and implement complex behaviors quickly while maintaining flexibility for future iteration.",
-      features: [
-        "AI-Driven Animal System ",
-        "Quadruped IK (Inverse Kinematics",
-        "Blueprint Systems Integration",
-        "Collaboration with Cross-Functional Teams",
-      ],
-      className: "lg:col-span-1 lg:row-span-1", // Small square
-    },
+    slug: "puzzlelot",
+    title: "PuzzleLot",
+    category: "Puzzle / City-Building Game",
+    role: "Environment Artist / Asset Artist",
+    summary:
+      "A stylized city-building puzzle game where parking constraints shape the layout, readability, and visual language of each city block.",
+    overview: [
+      "PuzzleLot is a puzzle and city-building game developed in Unreal Engine by a team of three developers. The game challenges players to design efficient and visually appealing city blocks while navigating restrictive parking minimum requirements.",
+      "I created a significant portion of the game's 3D and 2D assets, ensuring a cohesive visual style that supported gameplay clarity and the overall aesthetic of the environment. I designed and modeled environmental assets, props, and supporting visual elements that helped bring the city-building experience to life.",
+      "Beyond asset creation, I played a major role in environment development within Unreal Engine, assembling levels, integrating assets, and refining scene composition to create readable gameplay spaces.",
+    ],
+    tools: ["Unreal Engine", "Maya"],
+    contributions: [
+      "3D asset modeling",
+      "2D asset creation",
+      "Environment art and world building",
+      "Unreal Engine level assembly",
+      "Asset integration and optimization",
+      "Visual design support",
+      "Collaborative game development",
+    ],
+    hero: asset("puzzlelot", "puzzlelot-hero.webp"),
+    gallery: gallery("puzzlelot", "puzzlelot", 7),
+    videos: [],
+    externalLinks: [],
+    featured: true,
   },
   {
-    id: 9,
-    name: "Wellnut",
-    description: "Jarvis Innovation Challenge at DePaul University",
-    category: "Game Environment",
-    thumbnail: "/images/wellNut1.jpg",
-    media: "/videos/Wellnut.mp4",
-    tools: ["Unreal Engine", "Fab Assets", "Maya"],
-    link: "https://garuda.aero/",
-    content: {
-      overview:
-        "As part of the Wellnut Project team—finalists of the Jarvis Innovation Challenge at DePaul University, I was primarily responsible for designing and developing immersive environments where users can engage in guided meditation. My focus was on creating twocore spaces: a tranquil forest environment and a soothing cave environment, eachvdesigned to evoke a sense of peace and presence.v For the cave environment, I used shaders and water simulation techniques to create a serene, flowing water feature that enhances the calming atmosphere. The subtle movement of water, paired with ambient lighting and natural textures, was carefully crafted to help users enter a meditative state. I also worked with Unreal Engine blueprints to build and fine-tune shaders that respond to environmental cues, contributing to the dynamic and interactive nature of the experience. These technical and artistic choices were aimed at supporting the overall goal of the project—to provide a digital space that supports mental wellness through immersive and therapeutic design.",
-      features: [
-        "Real-Time Water Simulation",
-        "Advanced Water Shading",
-        "Terrain Painting",
-        "Sky System Integration",
-      ],
-      className: "lg:col-span-2 lg:row-span-1", // Wide card (spans 2 columns)
-    },
+    slug: "the-plant-chicago-digital-twin",
+    title: "The Plant Chicago Digital Twin",
+    category: "Digital Twin / Data Visualization",
+    role: "3D Visualization Artist",
+    summary:
+      "An interactive 3D facility visualization using color-coded spatial blocks to represent temperature patterns and sensor-backed environmental data.",
+    overview: [
+      "As part of my internship with The Plant Chicago, I contributed to the development of a digital twin of the facility, designed to visualize and monitor environmental data in an interactive 3D space.",
+      "My work involved creating a visual system using color-coded blocks to represent temperature variations throughout the facility, allowing users to quickly identify temperature patterns and changes within different areas.",
+      "The project is being expanded with integrated sensor technology that will provide live temperature data, enabling real-time visualization directly within the digital twin environment. This work was showcased at NeoCon 2026.",
+    ],
+    tools: ["3D Visualization", "Digital Twin Workflow", "Sensor Data Support"],
+    contributions: [
+      "Digital twin development",
+      "3D facility visualization",
+      "Temperature data representation",
+      "Interactive data visualization",
+      "Real-time sensor integration support",
+      "Environmental monitoring systems",
+    ],
+    hero: asset("the-plant-chicago-digital-twin", "plant-hero.webp"),
+    gallery: gallery("the-plant-chicago-digital-twin", "plant", 4),
+    videos: [],
+    externalLinks: [],
+    featured: false,
+  },
+  {
+    slug: "the-lagoon",
+    title: "The Lagoon",
+    category: "Virtual Production",
+    role: "Unreal Simulation Artist",
+    summary:
+      "A professional film production contribution focused on Unreal camera setup, image plates, shot composition, and virtual production scene assembly.",
+    overview: [
+      "The Lagoon is an upcoming feature film produced by Blue Light Production Studios, scheduled for theatrical release in late Summer 2026. As an Unreal Simulation Artist, I contributed to the virtual production pipeline by working extensively with camera setups, shot composition, and image plate integration within Unreal Engine.",
+      "My responsibilities included placing and aligning image plates, supporting camera-based workflows, and assisting in the setup of scenes involving the film's built-in Aria character.",
+      "Through close collaboration with the production team, I helped ensure that virtual elements, camera perspectives, and environmental components were accurately integrated to support the film's visual storytelling.",
+    ],
+    tools: ["Unreal Engine"],
+    contributions: [
+      "Virtual production workflows",
+      "Camera setup and shot composition",
+      "Image plate integration",
+      "Unreal Engine scene assembly",
+      "Aria character scene support",
+      "Cinematic environment development",
+    ],
+    hero: asset("the-lagoon", "lagoon-hero.webp"),
+    gallery: gallery("the-lagoon", "lagoon", 3),
+    videos: [
+      {
+        title: "Virtual production capture 01",
+        src: asset("the-lagoon", "lagoon-video-01.mp4"),
+        poster: asset("the-lagoon", "lagoon-hero.webp"),
+      },
+      {
+        title: "Virtual production capture 02",
+        src: asset("the-lagoon", "lagoon-video-02.mp4"),
+        poster: asset("the-lagoon", "lagoon-hero.webp"),
+      },
+      {
+        title: "Virtual production capture 03",
+        src: asset("the-lagoon", "lagoon-video-03.mp4"),
+        poster: asset("the-lagoon", "lagoon-hero.webp"),
+      },
+    ],
+    externalLinks: [],
+    featured: false,
+  },
+  {
+    slug: "procedural-snow-environment-generator",
+    title: "Procedural Snow Environment Generator",
+    category: "Technical Art / Scripting",
+    role: "Technical Artist",
+    summary:
+      "A MEL tool that procedurally generates snow environments in Maya with controllable rocks, trees, mountains, and snow particle effects.",
+    overview: [
+      "Developed as part of a scripting course, this tool was created to streamline environment creation in Maya. After working with environment artists, I noticed that manually populating large scenes with assets is time-consuming and can create performance issues when environments become too dense.",
+      "To solve this, I developed a script that procedurally generates snow environments with a single click, automatically creating and placing elements such as rocks, mountains, and snow particle effects.",
+      "The tool was designed to be flexible, allowing users to swap and customize assets to fit different environment styles and production needs.",
+    ],
+    tools: ["MEL", "Maya"],
+    contributions: [
+      "MEL scripting",
+      "Procedural environment generation",
+      "Automated asset placement",
+      "Snow particle integration",
+      "Customizable asset system",
+      "Workflow optimization",
+    ],
+    hero: asset(
+      "procedural-snow-environment-generator",
+      "scripting-hero.webp",
+    ),
+    gallery: gallery("procedural-snow-environment-generator", "scripting", 2),
+    videos: [
+      {
+        title: "Snow generator workflow",
+        src: asset(
+          "procedural-snow-environment-generator",
+          "scripting-video-01.mp4",
+        ),
+        poster: asset(
+          "procedural-snow-environment-generator",
+          "scripting-hero.webp",
+        ),
+      },
+    ],
+    externalLinks: [],
+    featured: false,
+  },
+  {
+    slug: "beloved-friend",
+    title: "Beloved Friend",
+    category: "Collaborative 3D Animated Short",
+    role: "Post-Production / 3D Modeling / Animation",
+    summary:
+      "A collaborative animated short film built by a five-artist team, with contributions across shot assembly, pacing, VFX integration, modeling, and animation.",
+    overview: [
+      "Beloved Friend is a collaborative 3D animated short film created by a team of five artists using Autodesk Maya. The project involved the complete production pipeline, including modeling, animation, scene assembly, and final presentation, with a strong emphasis on teamwork and storytelling.",
+      "My primary contribution was in post-production and shot assembly, where I organized sequences, trimmed shots, refined pacing, and integrated visual effects to ensure a cohesive narrative flow.",
+      "In addition to editing responsibilities, I contributed to the production process through 3D modeling and animation, creating assets and animating several key shots used throughout the film.",
+    ],
+    tools: ["Maya"],
+    contributions: [
+      "Shot assembly and sequence editing",
+      "Post-production workflow",
+      "Visual effects integration",
+      "3D modeling",
+      "Character and scene animation",
+      "Collaborative production pipeline",
+      "Final film presentation",
+    ],
+    hero: asset("beloved-friend", "beloved-friend-hero.webp"),
+    gallery: gallery("beloved-friend", "beloved-friend", 10),
+    videos: [],
+    externalLinks: [
+      {
+        label: "Watch on YouTube",
+        href: "https://www.youtube.com/watch?v=Ck_rxE5MwPc",
+      },
+    ],
+    featured: false,
   },
 ];
 
-export const personal_projects: Project[] = [
-  {
-    id: 1,
-    name: "The Seasons ",
-    description: "The beauty of nature throughout the seasons",
-    category: "Unreal Engine",
-    thumbnail: "/images/theseasons.png",
-    media: "/videos/Theseasons.mp4",
-    tools: ["Maya", "Wordpress", "Unreal Engine", "Readypalyerme"],
-    link: "https://youtu.be/QDpWhm2NUL0?si=TdSU08trqYCcXgD6",
-    content: {
-      overview:
-        "The Seasons is a video project created using Unreal Engine 5, inspired by the emotional expressions of nature through its changing seasons. The project visually explores nature’s transformation, each season representing a different emotion and the cycle of life. Through stunning 3D environmental art, the series highlights the inherent beauty of nature while encouraging a deeper emotional connection to the natural world and its changing landscapes.",
-      features: [
-        "Created using Unreal Engine 5, from concept to lighting and rendering",
-        "Focused on emotional storytelling through seasonal landscapes",
-        "Highlighted the therapeutic effect of seasonal art on mental health",
-      ],
-      className: "lg:col-span-1 lg:row-span-2", // Tall card (spans 2 rows)
-    },
-  },
-  // Medium square card
-  {
-    id: 2,
-    name: "The Great Escape (Vol. 1)",
-    description:
-      "The game uses real-time thriller gameplay to give players an intense experience in gaming.",
-    category: "First-Person Thriller Game",
-    thumbnail: "/images/TGE.png",
-    media: "/videos/tge.mp4",
-    tools: ["Unreal Engine", "Maya", "Blender"],
-    link: "https://youtu.be/LlwpJlALN3M",
-    content: {
-      overview:
-        "The Great Escape (Vol. 1) is a spine-chilling first-person shooter game built using Unreal ling and immersive experience. Players take on the role of George, a crime novelist whose daughter goes missing, leading him to the haunted Grihims Mansion. The game blends intense combat, puzzle-solving, and exploration, set against a backdrop of eerie visuals and a gripping narrative. The mansion itself is a key character, offering players an opportunity to uncover its dark secrets while battling relentless zombie hordes category",
-      features: [
-        "Created zombie Ai",
-        "Combat system with limited weapons, requiring strategic resource management",
-        "Integrated environmental challenges and puzzles",
-      ],
-      className: "lg:col-span-1 lg:row-span-1", // Square card
-    },
-  },
-  {
-    id: 3,
-    name: "Demoreel",
-    description:
-      "This demo reel showcases projects in game design, environment art, and animation, crafted with Unreal Engine 5, Unity, Maya, Photoshop, and Premiere Pro",
-    category: "Game Design, Environment Art & Animation",
-    thumbnail: "/images/Demoreel.png",
-    media: "/videos/demoreel.mp4",
-    tools: ["Unreal Engine", "Mixamo", "Blender"],
-    link: "https://www.youtube.com/watch?v=cWNqq1gD75c",
-    content: {
-      overview:
-        "This demo reel showcases a variety of projects in game design, environment art, and animation, developed using industry-standard tools such as Unreal Engine 5, Unity, Maya, Photoshop, and Premiere Pro. The reel highlights immersive environments, dynamic animations, and innovative gameplay mechanics, showcasing a versatile skill set across the game development pipeline. Each project is a reflection of creativity, technical precision, and collaboration",
-      features: [
-        "Utilizes industry-standard tools: Unreal Engine 5, Unity, Maya, ",
-        "Immersive world-building in environment art with detailed textures, lighting, and atmospheric effects",
-        "AI system and puzzle-solving",
-      ],
-      className: "lg:col-span-1 lg:row-span-1", // Square card
-    },
-  },
-  // Wide horizontal card
-  {
-    id: 4,
-    name: "The crash- Animation Shortfilm ",
-    description:
-      "It highlights immersive environments, dynamic animations, innovative gameplay mechanics,",
-    category: "Game Environment",
-    thumbnail: "/images/crash.png",
-    media: "/videos/crash.mp4",
-    tools: ["Unreal Engine", "Fab Assets", "Maya"],
-    link: "https://youtu.be/YgDTHFMUjbo",
-    content: {
-      overview:
-        "I developed a short film in Unreal Engine focused on speed awareness, using the contrast between high-speed action and the serene beauty of a winter wonderland to convey the message. The film highlights the intensity of speed while set against peaceful snowy landscapes, creating a powerful visual narrative to encourage reflection on the dangers of reckless speed.",
-      features: [
-        "Dynamic Lighting & Effects",
-        "Cinematic Camera Control",
-        "Particle Systems",
-      ],
-      className: "lg:col-span-2 lg:row-span-1", // Wide card (spans 2 columns)
-    },
-  },
-];
+export const featuredProjects = projects.filter((project) => project.featured);
+
+export function getProjectBySlug(slug: string) {
+  return projects.find((project) => project.slug === slug);
+}
+
+export function getRelatedProjects(slug: string) {
+  return projects.filter((project) => project.slug !== slug).slice(0, 3);
+}

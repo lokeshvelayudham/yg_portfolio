@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Yamini Ganesan | Portfolio",
+  title: "Yamini Ganesan | Environment Art Portfolio",
   description:
-    "3D environment designer crafting immersive worlds across games, VR/AR, and interactive media.",
+    "Cinematic environment art, virtual production, and interactive 3D work by Yamini Ganesan.",
 };
 
 export default function RootLayout({
@@ -31,15 +31,9 @@ export default function RootLayout({
       <head>
         <link
           rel="preload"
-          as="video"
-          href="/videos/abstract-bg.webm"
-          type="video/webm"
-        />
-        <link
-          rel="preload"
-          as="video"
-          href="/videos/abstract-bg.mp4"
-          type="video/mp4"
+          as="image"
+          href="/videos/abstract-bg-poster.webp"
+          type="image/webp"
         />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-01HXQCHPKY"
@@ -54,8 +48,8 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <body className={`${geistSans.variable} ${geistMono.variable} bg-black antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           {children}
         </ThemeProvider>
         <Analytics />

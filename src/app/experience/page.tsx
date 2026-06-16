@@ -1,281 +1,143 @@
-"use client";
 import Image from "next/image";
-import React from "react";
-import { Timeline } from "@/components/ui/timeline";
+import Link from "next/link";
+import { ArrowRight, BriefcaseBusiness, GraduationCap, Users } from "lucide-react";
 import { DockNav } from "@/components/DockNav";
 
-export default function experience() {
-  const data = [
-    {
-      title: "DePaul University",
-      content: (
-        <div className="space-y-4">
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-normal">
-            At DePaul University, pursuing my MA in Animation, I’ve expanded my
-            creative skills and professional network through hands-on roles and
-            active campus involvement. My background in design, animation, and
-            VR has allowed me to blend creativity, leadership, and collaboration
-            across various positions.
-          </p>
+export const metadata = {
+  title: "Experience | Yamini Ganesan",
+  description:
+    "Education, industry experience, leadership, and interactive media background for Yamini Ganesan.",
+};
 
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-normal">
-            As a{" "}
-            <strong>
-              Student Assistant in Jarvis Student Center for Innovation Centre,
-            </strong>{" "}
-            I’ve built strong relationships with faculty and mentors, opening
-            doors to collaboration and industry opportunities. I also serve as
-            an <strong>Event Manager for SIGGRAPH DePaul,</strong> organizing
-            gaming and animation events that bridge the gap between students and
-            experts.
-          </p>
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-normal">
-            In my role as a{" "}
-            <strong>Research Assistant under Professor Allen Turner, </strong>I
-            assist with projects that explore animation, technology, and
-            interactive media. This has deepened my understanding of research
-            methodologies and the application of theory to real-world creative
-            projects, enhancing my critical thinking and problem-solving skills.
-          </p>
+const experienceSections = [
+  {
+    icon: GraduationCap,
+    label: "Graduate Study",
+    title: "DePaul University",
+    meta: "MA Animation",
+    copy: [
+      "At DePaul University, I have expanded my creative practice through hands-on animation, game, research, and immersive media work. My background in design, animation, and VR allows me to move between artistic direction, technical problem solving, and team collaboration.",
+      "As a Student Assistant in the Jarvis Student Center for Innovation and an Event Manager for SIGGRAPH DePaul, I have supported student events, built faculty and industry relationships, and helped connect animation and game students with professional communities.",
+      "I also contribute as a Research Assistant under Professor Allen Turner, assisting with projects that explore animation, technology, and interactive media.",
+    ],
+    images: [
+      "/images/Sankofa2.webp",
+      "/images/Sankofa1.webp",
+      "/images/wellNut1.webp",
+    ],
+  },
+  {
+    icon: BriefcaseBusiness,
+    label: "Industry",
+    title: "Game, VR, and Visual Design",
+    meta: "Environment Art / Game Design / VR",
+    copy: [
+      "After earning my degree in Animation and Special Effects from Karnavati University, I began as a Visual Designer, building a foundation in layout, typography, and 2D design tools that still supports my 3D and game work.",
+      "I later worked in the game industry as a Game Designer at PixcellPlay Pvt. Ltd., contributing to gameplay documentation, level balancing, feature research, and iteration across mobile game projects.",
+      "With IQtechmax and GoingClear, I led VR environment work for metaverse projects, using Unreal Engine to model, texture, integrate assets, and coordinate development across teams.",
+    ],
+    images: ["/images/ie1.webp", "/images/ie2.webp", "/images/ie3.webp"],
+  },
+  {
+    icon: Users,
+    label: "Community",
+    title: "Leadership and Industry Engagement",
+    meta: "SIGGRAPH DePaul / Women in Games / LinkedIn",
+    copy: [
+      "Outside of production work, I stay active in the games and animation community through events such as IGDC, SIGGRAPH DePaul, and Women in Games programs.",
+      "I use these spaces to connect with professionals, support students entering creative technology fields, and keep my practice aligned with current industry conversations.",
+      "My professional presence on LinkedIn has grown to more than 10,000 followers through consistent engagement, networking, and project sharing.",
+    ],
+    images: ["/images/ku.webp", "/images/k1.webp", "/images/k2.webp"],
+  },
+];
 
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-normal">
-            A highlight of my time at DePaul has been the{" "}
-            <strong>Wellnut project, </strong> a gamified wellness mobile app
-            that earned us a finalist spot in the Jarvis Innovation Challenge.
-            This experience allowed me to apply my technical and creative skills
-            to a real-world challenge, strengthening my connections with
-            faculty, mentors, and industry leaders. All these experiences at
-            DePaul have not only leveraged my industry background but also
-            opened doors to new collaborations and growth opportunities.
-          </p>
-
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-normal">
-            Alongside these experiences, I’ve been consistently growing my
-            professional presence on LinkedIn, reaching over 10,000+ followers
-            through regular engagement, thoughtful content, and active
-            networking. This digital network has not only elevated my visibility
-            in the creative and tech communities but also led to several
-            collaborative opportunities on projects both within and beyond
-            DePaul. It has become a powerful tool in expanding my creative reach
-            and connecting with like-minded professionals. All these experiences
-            at DePaul have not only leveraged my industry background but also
-            opened doors to new collaborations and growth opportunities, both
-            online and on campus.
-          </p>
-
-          <div className="grid grid-cols-2 gap-2 md:gap-4">
-            <Image
-              src="/images/Sankofa2.png"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-32 md:h-44 w-full shadow-md"
-            />
-            <Image
-              src="/images/Sankofa1.png"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-32 md:h-44 w-full shadow-md"
-            />
-            <Image
-              src="/images/Sankofa3.jpeg"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-32 md:h-44 w-full shadow-md"
-            />
-            <Image
-              src="/images/Sankofa4.png"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-32 md:h-44 w-full shadow-md"
-            />
-          </div>
-
-          <div className="grid grid-cols-2 gap-2 md:gap-4">
-            <Image
-              src="/images/wellNut1.jpg"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-32 md:h-44 w-full shadow-md"
-            />
-            <Image
-              src="/images/wellNut2.jpg"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-32 md:h-44 w-full shadow-md"
-            />
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "Industry experience",
-      content: (
-        <div className="space-y-4">
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-normal">
-            After graduating with my degree in Animation and Special Effects
-            from Karnavati University, my first professional step was working as
-            a Visual Designer. That role became a crucial foundation for me,
-            it’s where I truly developed my eye for detail and learned the
-            importance of design principles, layout, and typography. I spent
-            that time mastering 2D tools like Photoshop, Illustrator, and
-            InDesign, which not only sharpened my technical skills but also
-            taught me how to communicate visually in a clean, effective way.
-            Even now, that design sense continues to support my work, whether
-            I’m crafting UI elements for a game, building immersive
-            environments, or refining textures in 3D.
-          </p>
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-normal">
-            From there, I moved into the game industry as a Game Designer at
-            PixcellPlay Pvt. Ltd., contributing to titles like Desi Dress Up,
-            Poke of words, BunnyGo and Super Stylist Dress Up. I was involved in
-            gameplay documentation, level balancing, and weekly design
-            iterations. It was a fast-paced environment where I quickly learned
-            how to design around user behavior and feedback, and how to keep
-            content fresh and challenging in a live product cycle through game
-            analysis.
-          </p>
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-normal">
-            Later, I worked with a Boston-based client, GoingClear as a Part of
-            Iqtechmax, on a metaverse project where I led the creation of VR
-            environments using Unreal Engine. This was a major step forward for
-            me, I was responsible for modeling, texturing, integrating assets
-            into VR, and managing the development workflow. It gave me the
-            chance to apply both my artistic and technical knowledge in a very
-            hands-on way, while also developing a strong sense of project
-            management and team coordination across time zones.
-          </p>
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-normal">
-            Outside of professional projects, I’ve continued to stay deeply
-            engaged with the industry. I’ve attended events like IGDC to connect
-            with professionals and stay current with trends. As a Women in Games
-            Ambassador, I’ve also been attending panels and mentoring events,
-            especially about helping women transition into careers in game
-            development.
-            <br />
-            These years after undergrad have helped me grow into a
-            multidisciplinary designer, someone who can combine solid design
-            principles with immersive storytelling and technical execution. Now,
-            at DePaul University, I’m continuing to build on that journey,
-            refining my skills, collaborating with new teams, and constantly
-            pushing my work to the next level.
-          </p>
-          <div className="grid grid-cols-2 gap-2 md:gap-4">
-            <Image
-              src="/images/ie1.jpeg"
-              alt="hero template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-32 md:h-44 w-full shadow-md"
-            />
-            <Image
-              src="/images/ie2.jpeg"
-              alt="feature template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-32 md:h-44 w-full shadow-md"
-            />
-            <Image
-              src="/images/ie3.jpeg"
-              alt="bento template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-32 md:h-44 w-full shadow-md"
-            />
-            <Image
-              src="/images/ie4.jpeg"
-              alt="cards template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-32 md:h-44 w-full shadow-md"
-            />
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "Early 2023 – karnavati university",
-      content: (
-        <div className="space-y-4">
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-normal">
-            During my time at Karnavati University, I pursued a Bachelors degree
-            in Animation and Special Effects, which really helped me discover my
-            passion for 3D art, rigging, and immersive design. I spent those
-            years building a strong foundation in 3D modeling, animation, and
-            storytelling, and I found myself drawn to visual aesthetics and how
-            to bring stories to life through design.
-          </p>
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-normal">
-            I was always eager to get involved in team projects and often found
-            myself taking on responsibilities that pushed me to think creatively
-            and problem-solve. I also started exploring VR early on and enjoyed
-            figuring out ways to combine new tech with creative ideas.
-          </p>
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-normal">
-            Outside of coursework, I attended events like the India Game
-            Developer Conference (IGDC), where I got to connect with
-            professionals and learn more about what’s happening in the industry.
-            I also became a Women in Games Ambassador, which gave me the
-            opportunity to support and advocate for more diversity and inclusion
-            in the gaming space. Through that role and other speaking
-            opportunities, I’ve talked about career changes into the gaming
-            industry—especially for women looking to get started.
-          </p>
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base font-normal">
-            While in college, I also focused a lot on networking. I built
-            connections on LinkedIn with people in the gaming and animation
-            industry.
-            <br />
-            Overall, my time at Karnavati shaped a lot of who I am today. It
-            gave me a strong technical base, encouraged my creative thinking,
-            and opened doors that led me to pursue my graduate studies in
-            animation at DePaul University.
-          </p>
-          <div className="grid grid-cols-2 gap-2 md:gap-4">
-            <Image
-              src="/images/ku.png"
-              alt="hero template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-32 md:h-44 w-full shadow-md"
-            />
-            <Image
-              src="/images/k1.jpeg"
-              alt="feature template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-32 md:h-44 w-full shadow-md"
-            />
-            <Image
-              src="/images/k2.jpeg"
-              alt="bento template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-32 md:h-44 w-full shadow-md"
-            />
-            <Image
-              src="/images/k3.jpeg"
-              alt="cards template"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover h-32 md:h-44 w-full shadow-md"
-            />
-          </div>
-        </div>
-      ),
-    },
-  ];
+export default function ExperiencePage() {
   return (
-    <div className="min-h-screen w-full pb-20 bg-white dark:bg-black">
-      <div className="pt-16 md:pt-20 w-full">
-        <Timeline data={data} />
-      </div>
+    <main className="min-h-screen bg-[#060606] pb-24 text-white">
+
+      <section className="mx-auto max-w-7xl px-5 pb-10 pt-32 sm:px-8 lg:px-10">
+        <p className="text-xs font-semibold uppercase tracking-[0.36em] text-[#68d8c2]">
+          Experience
+        </p>
+        <h1 className="mt-5 max-w-4xl text-5xl font-semibold leading-none tracking-normal sm:text-7xl">
+          A background across art, games, research, and real-time production.
+        </h1>
+        <p className="mt-6 max-w-2xl text-base leading-7 text-white/65 sm:text-lg">
+          The portfolio work is grounded in a broader practice spanning
+          environment art, VR design, animation, visual design, student
+          leadership, and industry collaboration.
+        </p>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 pb-24 sm:px-8 lg:px-10">
+        <div className="border-y border-white/10">
+          {experienceSections.map((section) => {
+            const Icon = section.icon;
+
+            return (
+              <article
+                key={section.title}
+                className="grid gap-8 border-b border-white/10 py-12 last:border-b-0 lg:grid-cols-[320px_1fr]"
+              >
+                <div>
+                  <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-[#f1b56f]">
+                    <Icon className="size-4" />
+                    {section.label}
+                  </div>
+                  <h2 className="mt-5 text-3xl font-semibold text-white">
+                    {section.title}
+                  </h2>
+                  <p className="mt-3 text-sm uppercase tracking-[0.18em] text-white/42">
+                    {section.meta}
+                  </p>
+                </div>
+
+                <div className="grid gap-8 xl:grid-cols-[1fr_360px]">
+                  <div className="space-y-5 text-base leading-8 text-white/70">
+                    {section.copy.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-2 xl:grid-cols-1">
+                    {section.images.map((src, index) => (
+                      <div
+                        key={src}
+                        className="relative aspect-[4/3] overflow-hidden border border-white/10 bg-[#111]"
+                      >
+                        <Image
+                          src={src}
+                          alt={`${section.title} image ${index + 1}`}
+                          fill
+                          sizes="(min-width: 1280px) 360px, 33vw"
+                          className="object-cover opacity-[0.82]"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="border-t border-white/10 bg-[#10100f] px-5 py-16 sm:px-8 lg:px-10">
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 md:flex-row md:items-center">
+          <h2 className="max-w-2xl text-3xl font-semibold text-white">
+            See how this experience shows up in the project case studies.
+          </h2>
+          <Link
+            href="/projects"
+            className="inline-flex h-11 items-center gap-2 bg-white px-5 text-sm font-semibold uppercase tracking-[0.18em] text-black transition-colors hover:bg-[#f1b56f]"
+          >
+            View Work
+            <ArrowRight className="size-4" />
+          </Link>
+        </div>
+      </section>
       <DockNav />
-    </div>
+    </main>
   );
 }

@@ -113,13 +113,31 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    background: #060606;
+  }
+
   * {
     @apply border-border outline-ring/50;
   }
 
   body {
+    min-height: 100vh;
     @apply bg-background text-foreground;
   }
+
+  ::selection {
+    background: rgba(241, 181, 111, 0.35);
+    color: #ffffff;
+  }
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 @keyframes slide-in-left {
