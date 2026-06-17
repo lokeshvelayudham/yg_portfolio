@@ -181,9 +181,71 @@ export const projects: Project[] = [
       "Environmental monitoring systems",
     ],
     hero: asset("the-plant-chicago-digital-twin", "plant-hero.webp"),
-    gallery: gallery("the-plant-chicago-digital-twin", "plant", 4),
+    gallery: [
+      asset("the-plant-chicago-digital-twin", "plant-01.webp"),
+      asset("the-plant-chicago-digital-twin", "plant-02.webp"),
+      asset("the-plant-chicago-digital-twin", "plant-03.webp"),
+      asset(
+        "the-plant-chicago-digital-twin",
+        "plant-temperature-block-shade.webp",
+      ),
+      asset(
+        "the-plant-chicago-digital-twin",
+        "plant-temperature-floor-shade.webp",
+      ),
+      asset(
+        "the-plant-chicago-digital-twin",
+        "plant-temperature-camera-render.webp",
+      ),
+    ],
     videos: [],
     externalLinks: [],
+    featured: false,
+  },
+  {
+    slug: "yamini-video-browser-hand-control",
+    title: "YaminiVideo Browser Hand Control",
+    category: "Computer Vision / Interactive Web",
+    role: "Creative Technologist / Interactive Developer",
+    summary:
+      "A browser-based hand-tracking prototype that uses live camera input, pinch gestures, and two-hand controls to manipulate on-screen objects.",
+    overview: [
+      "YaminiVideo is an interactive browser-based prototype focused on hand-controlled input. The live project uses camera tracking to detect hand movement and turn gestures into object controls directly inside the web page.",
+      "The interface exposes tracking feedback while the demo runs, including hand count, FPS, left and right pinch values, object state, shape, and scale. This makes the interaction system readable during testing and helps connect each gesture to the resulting object behavior.",
+      "The captured demo shows the prototype running on mobile, with hand landmarks, pinch overlays, shape changes, scaling, and two-hand interaction. The project explores how browser experiences can feel more spatial and tactile without relying on a traditional mouse or controller.",
+    ],
+    tools: [
+      "Browser Camera",
+      "Hand Tracking",
+      "Gesture Interaction",
+      "Vercel Deployment",
+    ],
+    contributions: [
+      "Interactive prototype development",
+      "Camera-based tracking interface",
+      "Gesture response design",
+      "Pinch and two-hand interaction testing",
+      "Object state and scale visualization",
+      "Live web deployment",
+    ],
+    hero: asset("yamini-video-browser-hand-control", "yamini-video-hero.webp"),
+    gallery: gallery("yamini-video-browser-hand-control", "yamini-video", 6),
+    videos: [
+      {
+        title: "YaminiVideo mobile hand-control demo",
+        src: asset("yamini-video-browser-hand-control", "yamini-video-demo.mp4"),
+        poster: asset(
+          "yamini-video-browser-hand-control",
+          "yamini-video-hero.webp",
+        ),
+      },
+    ],
+    externalLinks: [
+      {
+        label: "Open Live Demo",
+        href: "https://yamini-video.vercel.app/",
+      },
+    ],
     featured: false,
   },
   {
