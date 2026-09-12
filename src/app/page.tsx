@@ -1,7 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ExternalLink, Linkedin, Mail, Play } from "lucide-react";
+import {
+  ArrowRight,
+  Play,
+  UserRound,
+} from "lucide-react";
+import { ButterflyCursor } from "@/components/ButterflyCursor";
 import { DockNav } from "@/components/DockNav";
+import { ProjectCarousel } from "@/components/ProjectCarousel";
 import { featuredProjects } from "@/lib/projects-data";
 
 type PipelineTool = {
@@ -59,9 +65,21 @@ const homeStats: HomeStat[] = [
   },
 ];
 
+const carouselProjects = [
+  "lost-rooms",
+  "architectural-interior-lighting-study",
+  "lost-past",
+]
+  .map((slug) => featuredProjects.find((project) => project.slug === slug))
+  .filter(
+    (project): project is (typeof featuredProjects)[number] =>
+      project !== undefined,
+  );
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[color:var(--portfolio-bg)] pb-24 text-[color:var(--portfolio-text)]">
+    <main className="min-h-screen cursor-none bg-[color:var(--portfolio-bg)] pb-24 text-[color:var(--portfolio-text)]">
+      <ButterflyCursor />
       <section className="relative min-h-screen overflow-hidden">
         <video
           autoPlay
@@ -148,6 +166,57 @@ export default function Home() {
         </div>
       </section>
 
+      <section
+        id="about"
+        className="scroll-mt-12 border-b border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-bg)] px-5 py-20 sm:px-8 lg:px-10"
+      >
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
+          <div>
+            <div className="flex size-14 items-center justify-center rounded-full border border-[#68d8c2]/60 bg-[#68d8c2]/10 text-[#68d8c2] shadow-[0_0_28px_rgba(104,216,194,0.16)]">
+              <UserRound className="size-6" />
+            </div>
+            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.34em] text-[#68d8c2]">
+              About
+            </p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-normal text-[color:var(--portfolio-heading)] sm:text-5xl">
+              About Me
+            </h2>
+          </div>
+          <div className="max-w-3xl border-l border-[color:var(--portfolio-border)] pl-0 sm:pl-8 lg:mt-3">
+            <p className="text-lg leading-8 text-[color:var(--portfolio-muted)] sm:text-xl">
+              I&apos;m Yamini Ganesan, a 3D Designer and technical artist who
+              builds immersive environments, interactive experiences, and
+              cinematic worlds.
+            </p>
+            <p className="mt-5 text-base leading-7 text-[color:var(--portfolio-muted)]">
+              My work brings together environment art, real-time technology,
+              animation, and visual storytelling—from Unreal Engine game
+              spaces and virtual production to digital twins and educational
+              media.
+            </p>
+            <Link
+              href="/experience"
+              className="mt-7 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#f1b56f] transition-colors hover:text-[color:var(--portfolio-heading)]"
+            >
+              Explore My Experience
+              <ArrowRight className="size-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section
+        aria-label="Featured project carousel"
+        className="overflow-hidden border-b border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-surface)] py-5"
+      >
+        <div className="mb-4 mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#68d8c2]">
+            Project Highlights
+          </p>
+        </div>
+        <ProjectCarousel projects={carouselProjects} />
+      </section>
+
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10">
         <div className="flex flex-col justify-between gap-6 border-b border-[color:var(--portfolio-border)] pb-8 md:flex-row md:items-end">
           <div>
@@ -155,8 +224,7 @@ export default function Home() {
               Featured Work
             </p>
             <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-normal text-[color:var(--portfolio-heading)] sm:text-5xl">
-              Immersive 3D worlds shaped through real-time environments,
-              technical art, and interactive storytelling.
+              All Projects
             </h2>
           </div>
           <Link
@@ -205,99 +273,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="contact"
-        className="relative overflow-hidden border-t border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-surface-strong)] px-5 py-20 sm:px-8 lg:px-10"
-      >
-        <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(241,181,111,0),rgba(241,181,111,0.8),rgba(104,216,194,0.6),rgba(241,181,111,0))]" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(241,181,111,0.13),rgba(241,181,111,0)_32%),radial-gradient(circle_at_82%_12%,rgba(104,216,194,0.1),rgba(104,216,194,0)_30%)]" />
-
-        <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-3">
-              <span className="h-px w-10 bg-[#f1b56f]" />
-              <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[color:var(--portfolio-subtle)]">
-                Contact
-              </p>
-            </div>
-            <h2 className="mt-6 text-4xl font-semibold leading-tight text-[color:var(--portfolio-heading)] sm:text-5xl">
-              Let's create worlds that feel lived in.
-            </h2>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-[color:var(--portfolio-muted)]">
-              Available for environment art, real-time 3D, virtual production,
-              and cinematic world-building roles.
-            </p>
-
-            <dl className="mt-8 grid gap-4 border-y border-[color:var(--portfolio-border)] py-5 sm:grid-cols-3">
-              {[
-                ["Focus", "Environment Art"],
-                ["Location", "Chicago / Remote"],
-                ["Status", "Open to Roles"],
-              ].map(([label, value]) => (
-                <div key={label}>
-                  <dt className="text-[10px] uppercase tracking-[0.28em] text-[color:var(--portfolio-subtle)]">
-                    {label}
-                  </dt>
-                  <dd className="mt-2 text-sm font-medium text-[color:var(--portfolio-heading)]">
-                    {value}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-
-          <div className="grid gap-3">
-            <Link
-              href="mailto:Yaminiganesh099@gmail.com"
-              className="group flex items-center justify-between border border-[#f1b56f]/50 bg-[#f1b56f] px-5 py-4 text-black transition-colors hover:bg-white"
-            >
-              <span>
-                <span className="block text-[10px] font-semibold uppercase tracking-[0.28em] text-black/58">
-                  Email
-                </span>
-                <span className="mt-1 block text-sm font-semibold">
-                  Yaminiganesh099@gmail.com
-                </span>
-              </span>
-              <Mail className="size-5 transition-transform group-hover:translate-x-1" />
-            </Link>
-
-            <Link
-              href="https://www.linkedin.com/in/yaminiganesan/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-between border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-bg)] px-5 py-4 text-[color:var(--portfolio-heading)] transition-colors hover:border-[color:var(--portfolio-border-strong)] hover:bg-[color:var(--portfolio-surface)]"
-            >
-              <span>
-                <span className="block text-[10px] font-semibold uppercase tracking-[0.28em] text-[color:var(--portfolio-subtle)]">
-                  Connect
-                </span>
-                <span className="mt-1 block text-sm font-semibold">
-                  LinkedIn
-                </span>
-              </span>
-              <Linkedin className="size-5 transition-transform group-hover:translate-x-1" />
-            </Link>
-
-            <Link
-              href="https://yaminiganesan.artstation.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-between border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-bg)] px-5 py-4 text-[color:var(--portfolio-heading)] transition-colors hover:border-[color:var(--portfolio-border-strong)] hover:bg-[color:var(--portfolio-surface)]"
-            >
-              <span>
-                <span className="block text-[10px] font-semibold uppercase tracking-[0.28em] text-[color:var(--portfolio-subtle)]">
-                  Portfolio
-                </span>
-                <span className="mt-1 block text-sm font-semibold">
-                  ArtStation
-                </span>
-              </span>
-              <ExternalLink className="size-5 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-        </div>
-      </section>
       <DockNav />
     </main>
   );

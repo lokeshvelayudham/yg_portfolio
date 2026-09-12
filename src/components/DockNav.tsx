@@ -8,11 +8,12 @@ import {
   PanelsTopLeft,
   BriefcaseBusiness,
   Linkedin,
+  UserRound,
 } from "lucide-react";
 import { Dock, DockIcon, DockItem, DockLabel } from "@/components/ui/dock";
 import { ThemeToggle } from "@/components/theme";
 import Icon from "@mdi/react";
-import { mdiArtstation, } from "@mdi/js";
+import { mdiArtstation } from "@mdi/js";
 
 interface DockItem {
   title: string;
@@ -34,91 +35,64 @@ export function DockNav() {
   const data: DockItemType[] = [
     {
       title: "Home",
-      icon: (
-        <HomeIcon className="h-full w-full text-neutral-600 dark:text-neutral-300" />
-      ),
+      icon: <HomeIcon className="h-full w-full text-neutral-600 dark:text-neutral-300" />,
       href: "/",
     },
     {
       title: "Projects",
-      icon: (
-        <PanelsTopLeft className="h-full w-full text-neutral-600 dark:text-neutral-300" />
-      ),
+      icon: <PanelsTopLeft className="h-full w-full text-neutral-600 dark:text-neutral-300" />,
       href: "/projects",
     },
     {
+      title: "About",
+      icon: <UserRound className="h-full w-full text-neutral-600 dark:text-neutral-300" />,
+      href: "/#about",
+    },
+    {
       title: "Resume",
-      icon: (
-        <FileText className="h-full w-full text-neutral-600 dark:text-neutral-300" />
-      ),
+      icon: <FileText className="h-full w-full text-neutral-600 dark:text-neutral-300" />,
       href: "/resume/yamini-ganesan-resume.pdf",
     },
     {
       title: "Experience",
-      icon: (
-        <BriefcaseBusiness className="h-full w-full text-neutral-600 dark:text-neutral-300" />
-      ),
+      icon: <BriefcaseBusiness className="h-full w-full text-neutral-600 dark:text-neutral-300" />,
       href: "/experience",
     },
-    // Separator
-    {
-      isSeparator: true,
-    },
+    { isSeparator: true },
     {
       title: "ArtStation",
-      icon: (
-        <Icon
-          path={mdiArtstation}
-          size={1}
-          className="text-neutral-600 dark:text-neutral-300"
-        />
-      ),
-      // icon: <ScrollText className="h-full w-full text-neutral-600 dark:text-neutral-300" />,
+      icon: <Icon path={mdiArtstation} size={1} className="text-neutral-600 dark:text-neutral-300" />,
       href: "https://yaminiganesan.artstation.com/",
     },
     {
       title: "linkedin",
-      icon: (
-        <Linkedin className="h-full w-full text-neutral-600 dark:text-neutral-300" />
-      ),
-      // icon: <ScrollText className="h-full w-full text-neutral-600 dark:text-neutral-300" />,
+      icon: <Linkedin className="h-full w-full text-neutral-600 dark:text-neutral-300" />,
       href: "https://www.linkedin.com/in/yaminiganesan/",
     },
     {
       title: "Email",
-      icon: (
-        <Mail className="h-full w-full text-neutral-600 dark:text-neutral-300" />
-      ),
+      icon: <Mail className="h-full w-full text-neutral-600 dark:text-neutral-300" />,
       href: "mailto:Yaminiganesh099@gmail.com",
     },
   ];
 
   return (
-    <div className="fixed bottom-2 left-1/2 max-w-full -translate-x-1/2 z-20">
+    <div className="fixed bottom-2 left-1/2 z-20 max-w-full -translate-x-1/2">
       <Dock className="items-end pb-3">
         {data.map((item, idx) => {
           const opensInNewTab =
             !item.isSeparator &&
-            (item.href.startsWith("http") ||
-              item.href.startsWith("mailto") ||
-              item.href.endsWith(".pdf"));
+            (item.href.startsWith("http") || item.href.startsWith("mailto") || item.href.endsWith(".pdf"));
 
           return item.isSeparator ? (
-            <div
-              key={`separator-${idx}`}
-              className="h-8 w-px bg-neutral-300 dark:bg-neutral-600 mx-2"
-            />
+            <div key={`separator-${idx}`} className="mx-2 h-8 w-px bg-neutral-300 dark:bg-neutral-600" />
           ) : (
             <Link
               key={idx}
               href={item.href}
               passHref
               target={opensInNewTab ? "_blank" : undefined}
-              rel={
-                item.href.startsWith("http") || item.href.endsWith(".pdf")
-                  ? "noopener noreferrer"
-                  : undefined
-              }
+              rel={item.href.startsWith("http") || item.href.endsWith(".pdf") ? "noopener noreferrer" : undefined}
             >
               <DockItem className="aspect-square rounded-full bg-gray-200 dark:bg-neutral-800">
                 <DockLabel>{item.title}</DockLabel>
@@ -129,9 +103,7 @@ export function DockNav() {
         })}
         <DockItem className="aspect-square rounded-full bg-gray-200 dark:bg-neutral-800">
           <DockLabel>Theme</DockLabel>
-          <DockIcon>
-            <ThemeToggle />
-          </DockIcon>
+          <DockIcon><ThemeToggle /></DockIcon>
         </DockItem>
       </Dock>
     </div>

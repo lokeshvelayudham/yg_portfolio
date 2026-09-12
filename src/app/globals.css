@@ -207,6 +207,84 @@
   animation: slide-in-left 1s ease-out forwards;
 }
 
+@keyframes butterfly-flutter-left {
+  0%,
+  100% {
+    transform: rotateY(0deg) rotate(-9deg);
+  }
+
+  50% {
+    transform: rotateY(64deg) rotate(9deg);
+  }
+}
+
+@keyframes butterfly-flutter-right {
+  0%,
+  100% {
+    transform: rotateY(0deg) rotate(9deg);
+  }
+
+  50% {
+    transform: rotateY(-64deg) rotate(-9deg);
+  }
+}
+
+.butterfly-cursor {
+  perspective: 80px;
+}
+
+.butterfly-wing {
+  animation-duration: 0.42s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  border: 1px solid rgba(36, 29, 23, 0.85);
+  box-shadow:
+    inset 1px 1px 2px rgba(255, 241, 202, 0.45),
+    inset -2px -2px 3px rgba(24, 17, 14, 0.55),
+    0 2px 5px rgba(0, 0, 0, 0.35);
+  transform-style: preserve-3d;
+}
+
+.butterfly-forewing {
+  background:
+    radial-gradient(ellipse at 75% 22%, #f6d66d 0 7%, transparent 8%),
+    radial-gradient(ellipse at 64% 46%, #231b17 0 9%, transparent 10%),
+    radial-gradient(ellipse at 36% 72%, #f0c45c 0 6%, transparent 7%),
+    linear-gradient(145deg, #2d1e18 3%, #ba5d22 15%, #ec9d35 42%, #f8cf65 65%, #352019 100%);
+}
+
+.butterfly-hindwing {
+  background:
+    radial-gradient(ellipse at 68% 36%, #f3d370 0 8%, transparent 9%),
+    radial-gradient(ellipse at 42% 62%, #251b16 0 10%, transparent 11%),
+    linear-gradient(145deg, #2b1e18 3%, #a84e22 18%, #e8832d 48%, #f4c965 70%, #36221a 100%);
+}
+
+.butterfly-wing-right.butterfly-forewing {
+  background:
+    radial-gradient(ellipse at 25% 22%, #f6d66d 0 7%, transparent 8%),
+    radial-gradient(ellipse at 36% 46%, #231b17 0 9%, transparent 10%),
+    radial-gradient(ellipse at 64% 72%, #f0c45c 0 6%, transparent 7%),
+    linear-gradient(215deg, #2d1e18 3%, #ba5d22 15%, #ec9d35 42%, #f8cf65 65%, #352019 100%);
+}
+
+.butterfly-wing-right.butterfly-hindwing {
+  background:
+    radial-gradient(ellipse at 32% 36%, #f3d370 0 8%, transparent 9%),
+    radial-gradient(ellipse at 58% 62%, #251b16 0 10%, transparent 11%),
+    linear-gradient(215deg, #2b1e18 3%, #a84e22 18%, #e8832d 48%, #f4c965 70%, #36221a 100%);
+}
+
+.butterfly-wing-left {
+  animation-name: butterfly-flutter-left;
+  transform-origin: right center;
+}
+
+.butterfly-wing-right {
+  animation-name: butterfly-flutter-right;
+  transform-origin: left center;
+}
+
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }
@@ -291,10 +369,15 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .cursor-none {
+    cursor: auto !important;
+  }
+
   .animate-pulse-soft,
   .animate-float-slow,
   .animate-spin-slow,
-  .progress-glow {
+  .progress-glow,
+  .butterfly-wing {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
   }
