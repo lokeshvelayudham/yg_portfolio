@@ -1,0 +1,109 @@
+
+> yg_portfolio@0.1.0 dev
+> next dev --turbopack
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.253:3000
+
+✓ Starting...
+✓ Ready in 15.1s
+○ Compiling / ...
+ GET / 200 in 16.5s (compile: 15.3s, render: 1243ms)
+ GET / 200 in 164ms (compile: 11ms, render: 154ms)
+ GET /projects/lost-past 200 in 2.9s (compile: 2.7s, generate-params: 967ms, render: 210ms)
+ GET /projects/lost-past 200 in 80ms (compile: 25ms, generate-params: 9ms, render: 55ms)
+ GET / 200 in 200ms (compile: 72ms, render: 128ms)
+ GET / 200 in 419ms (compile: 80ms, render: 339ms)
+ GET /projects/lost-past 200 in 240ms (compile: 86ms, generate-params: 9ms, render: 153ms)
+ GET / 200 in 292ms (compile: 9ms, render: 283ms)
+ GET /projects/lost-past 200 in 106ms (compile: 21ms, generate-params: 69µs, render: 85ms)
+ GET /projects/lost-past 200 in 239ms (compile: 135ms, generate-params: 8ms, render: 104ms)
+ GET / 200 in 373ms (compile: 78ms, render: 295ms)
+ GET /projects/lost-past 200 in 62ms (compile: 8ms, generate-params: 68µs, render: 54ms)
+ GET / 200 in 247ms (compile: 9ms, render: 238ms)
+ GET /projects/lost-past 200 in 80ms (compile: 21ms, generate-params: 8ms, render: 59ms)
+ GET / 200 in 256ms (compile: 110ms, render: 146ms)
+✓ Compiled in 123ms
+ GET / 200 in 592ms (compile: 9ms, render: 583ms)
+ GET /projects/lost-past 200 in 58ms (compile: 19ms, generate-params: 8ms, render: 39ms)
+ GET / 200 in 231ms (compile: 88ms, render: 143ms)
+ GET /projects/lost-past 200 in 84ms (compile: 21ms, generate-params: 9ms, render: 62ms)
+ GET / 200 in 251ms (compile: 99ms, render: 152ms)
+✓ Compiled in 149ms
+✓ Compiled in 216ms
+ GET /projects/lost-past 200 in 99ms (compile: 21ms, generate-params: 10ms, render: 78ms)
+ GET / 200 in 466ms (compile: 273ms, render: 193ms)
+ GET / 200 in 433ms (compile: 9ms, render: 424ms)
+✓ Compiled in 69ms
+✓ Compiled in 162ms
+ GET /projects/lost-past 200 in 106ms (compile: 26ms, generate-params: 12ms, render: 81ms)
+ GET / 200 in 434ms (compile: 212ms, render: 222ms)
+✓ Compiled in 157ms
+✓ Compiled in 144ms
+✓ Compiled in 211ms
+ GET /projects/architectural-interior-lighting-study 200 in 129ms (compile: 27ms, generate-params: 12ms, render: 102ms)
+ GET / 200 in 468ms (compile: 86ms, render: 383ms)
+ GET /projects 200 in 795ms (compile: 715ms, render: 80ms)
+ GET / 200 in 55ms (compile: 9ms, render: 46ms)
+ GET /projects/lost-past 200 in 37ms (compile: 10ms, generate-params: 5ms, render: 26ms)
+ GET / 200 in 30ms (compile: 5ms, render: 25ms)
+✓ Compiled in 223ms
+✓ Compiled in 152ms
+✓ Compiled in 81ms
+✓ Compiled in 136ms
+ GET / 200 in 358ms (compile: 232ms, render: 126ms)
+ GET / 200 in 400ms (compile: 10ms, render: 390ms)
+ GET /projects/lost-past 200 in 92ms (compile: 19ms, generate-params: 9ms, render: 73ms)
+ GET / 200 in 363ms (compile: 194ms, render: 169ms)
+✓ Compiled in 90ms
+ GET / 200 in 602ms (compile: 109ms, render: 493ms)
+ GET / 200 in 55ms (compile: 8ms, render: 47ms)
+ GET /experience 200 in 585ms (compile: 534ms, render: 51ms)
+ GET / 200 in 78ms (compile: 13ms, render: 65ms)
+✓ Compiled in 197ms
+ GET /projects/lost-past 200 in 1088ms (compile: 253ms, generate-params: 15ms, render: 835ms)
+ GET /projects/lost-past 200 in 380ms (compile: 23ms, generate-params: 85µs, render: 357ms)
+ GET / 200 in 1667ms (compile: 272ms, render: 1395ms)
+ GET /projects/lost-past 200 in 271ms (compile: 20ms, generate-params: 77µs, render: 251ms)
+ GET / 200 in 1237ms (compile: 27ms, render: 1210ms)
+ GET / 200 in 1123ms (compile: 398ms, render: 725ms)
+ GET /projects/lost-past 200 in 173ms (compile: 20ms, generate-params: 58µs, render: 153ms)
+ GET / 200 in 542ms (compile: 27ms, render: 515ms)
+ GET /projects/lost-past 200 in 79ms (compile: 20ms, generate-params: 10ms, render: 59ms)
+ GET / 200 in 351ms (compile: 171ms, render: 180ms)
+ GET / 200 in 425ms (compile: 12ms, render: 413ms)
+✓ Compiled in 157ms
+ GET / 200 in 414ms (compile: 163ms, render: 251ms)
+ GET / 200 in 381ms (compile: 167ms, render: 214ms)
+ GET / 200 in 123ms (compile: 10ms, render: 113ms)
+ GET /projects/lost-past 200 in 353ms (compile: 218ms, generate-params: 14ms, render: 135ms)
+✓ Compiled in 178ms
+✓ Compiled in 366ms
+ GET /projects/lost-past 200 in 1622ms (compile: 491ms, generate-params: 22ms, render: 1131ms)
+ GET /projects/lost-past 200 in 793ms (compile: 154ms, generate-params: 56µs, render: 639ms)
+ GET /projects/lost-past 200 in 415ms (compile: 128ms, generate-params: 43µs, render: 287ms)
+ GET / 200 in 2.2s (compile: 331ms, render: 1855ms)
+ GET / 200 in 1675ms (compile: 22ms, render: 1653ms)
+ GET / 200 in 1206ms (compile: 31ms, render: 1176ms)
+ GET /projects/lost-past 200 in 413ms (compile: 18ms, generate-params: 52µs, render: 394ms)
+ GET / 200 in 1046ms (compile: 26ms, render: 1020ms)
+ GET / 200 in 952ms (compile: 24ms, render: 928ms)
+ GET / 200 in 845ms (compile: 36ms, render: 809ms)
+ GET / 200 in 484ms (compile: 25ms, render: 459ms)
+ GET / 200 in 277ms (compile: 26ms, render: 251ms)
+ GET /projects/lost-past 200 in 95ms (compile: 25ms, generate-params: 13ms, render: 70ms)
+ GET / 200 in 630ms (compile: 269ms, render: 361ms)
+ GET / 200 in 265ms (compile: 103ms, render: 162ms)
+ GET /projects/lost-past 200 in 102ms (compile: 25ms, generate-params: 12ms, render: 77ms)
+ GET / 200 in 513ms (compile: 146ms, render: 366ms)
+ GET / 200 in 265ms (compile: 43ms, render: 222ms)
+ GET / 200 in 36ms (compile: 7ms, render: 30ms)
+ GET / 200 in 33ms (compile: 6ms, render: 28ms)
+ GET / 200 in 34ms (compile: 6ms, render: 28ms)
+ GET / 200 in 33ms (compile: 6ms, render: 27ms)
+ GET / 200 in 31ms (compile: 6ms, render: 25ms)
+ GET / 200 in 37ms (compile: 6ms, render: 31ms)
+ GET /projects 200 in 166ms (compile: 105ms, render: 61ms)
+ GET /projects 200 in 37ms (compile: 6ms, render: 31ms)
+ GET /experience 200 in 114ms (compile: 78ms, render: 36ms)
