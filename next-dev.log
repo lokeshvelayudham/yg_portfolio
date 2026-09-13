@@ -107,3 +107,12 @@
  GET /projects 200 in 166ms (compile: 105ms, render: 61ms)
  GET /projects 200 in 37ms (compile: 6ms, render: 31ms)
  GET /experience 200 in 114ms (compile: 78ms, render: 36ms)
+ GET /experience 200 in 65ms (compile: 14ms, render: 51ms)
+✓ Compiled in 79ms
+✓ Compiled in 44ms
+ GET /experience 200 in 91ms (compile: 7ms, render: 83ms)
+ GET /experience 200 in 48ms (compile: 6ms, render: 42ms)
+✓ Compiled in 207ms
+ GET / 200 in 221ms (compile: 166ms, render: 55ms)
+✓ Compiled in 71ms
+✓ Compiled in 50ms
