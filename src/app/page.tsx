@@ -78,7 +78,7 @@ const carouselProjects = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen cursor-none bg-[color:var(--portfolio-bg)] pb-24 text-[color:var(--portfolio-text)]">
+    <main className="butterfly-cursor-area min-h-screen bg-[color:var(--portfolio-bg)] pb-24 text-[color:var(--portfolio-text)]">
       <ButterflyCursor />
       <section className="relative min-h-screen overflow-hidden">
         <video

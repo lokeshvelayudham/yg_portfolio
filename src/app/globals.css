@@ -233,6 +233,12 @@
   perspective: 80px;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .butterfly-cursor-area {
+    cursor: none;
+  }
+}
+
 .butterfly-wing {
   animation-duration: 0.42s;
   animation-iteration-count: infinite;
@@ -369,7 +375,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cursor-none {
+  .butterfly-cursor-area {
     cursor: auto !important;
   }
 

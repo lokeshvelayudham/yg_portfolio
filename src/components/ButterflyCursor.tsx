@@ -7,7 +7,11 @@ export function ButterflyCursor() {
 
   useEffect(() => {
     const cursor = cursorRef.current;
-    if (!cursor || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (
+      !cursor ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      !window.matchMedia("(hover: hover) and (pointer: fine)").matches
+    ) {
       return;
     }
 

@@ -10,9 +10,19 @@ type ProjectCarouselProps = {
   projects: Project[];
 };
 
+function getCarouselStep(scroller: HTMLDivElement) {
+  const card = scroller.querySelector<HTMLElement>("[data-carousel-card]");
+  const track = scroller.firstElementChild;
+
+  if (!card || !track) {
+    return 380;
+  }
+
+  return card.getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap || "0");
+}
+
 export function ProjectCarousel({ projects }: ProjectCarouselProps) {
   const scrollerRef = useRef<HTMLDivElement>(null);
-  const resumeAutoScrollAtRef = useRef(0);
 
   useEffect(() => {
     const scroller = scrollerRef.current;
@@ -21,29 +31,19 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
       return;
     }
 
-    let frameId = 0;
-    let previousTime = performance.now();
+    const moveToNextProject = () => {
+      const loopWidth = scroller.scrollWidth / 2;
+      const step = getCarouselStep(scroller);
 
-    const move = (time: number) => {
-      const elapsed = time - previousTime;
-      previousTime = time;
-
-      if (Date.now() < resumeAutoScrollAtRef.current) {
-        frameId = requestAnimationFrame(move);
-        return;
+      if (scroller.scrollLeft + step >= loopWidth) {
+        scroller.scrollLeft -= loopWidth;
       }
 
-      scroller.scrollLeft += (elapsed / 1000) * 32;
-
-      if (scroller.scrollLeft >= scroller.scrollWidth / 2) {
-        scroller.scrollLeft -= scroller.scrollWidth / 2;
-      }
-
-      frameId = requestAnimationFrame(move);
+      scroller.scrollBy({ left: step, behavior: "smooth" });
     };
 
-    frameId = requestAnimationFrame(move);
-    return () => cancelAnimationFrame(frameId);
+    const intervalId = window.setInterval(moveToNextProject, 1800);
+    return () => window.clearInterval(intervalId);
   }, []);
 
   const moveCarousel = (direction: "left" | "right") => {
@@ -54,8 +54,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
     }
 
     const loopWidth = scroller.scrollWidth / 2;
-    const step = 380;
-    resumeAutoScrollAtRef.current = Date.now() + 700;
+    const step = getCarouselStep(scroller);
 
     // The duplicated cards form a seamless loop. Shift to the matching copy
     // before moving left so the previous project is always available.
@@ -63,7 +62,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
       scroller.scrollLeft += loopWidth;
     }
 
-    if (direction === "right" && scroller.scrollLeft >= loopWidth) {
+    if (direction === "right" && scroller.scrollLeft + step >= loopWidth) {
       scroller.scrollLeft -= loopWidth;
     }
 
@@ -89,6 +88,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
             projects.map((project) => (
               <Link
                 key={`${copyIndex}-${project.slug}`}
+                data-carousel-card
                 href={`/projects/${project.slug}`}
                 tabIndex={copyIndex === 1 ? -1 : undefined}
                 aria-hidden={copyIndex === 1}
